@@ -37,41 +37,47 @@ const SigninPage = () => {
         await signIn('google', { callbackUrl: '/dashboard' });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setError('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    
+    if (!formData.email || !formData.password) {
+        setError('অনুগ্রহ করে ইমেইল এবং পাসওয়ার্ড দিন।');
+        return;
+    }
+
+    setLoading(true);
+
+    try {
+        // দ্রষ্টব্য: আপনার API URL টি /api/auth/signin, নিশ্চিত করুন এটি সঠিক
+        const response = await fetch('http://localhost:3001/api/auth/signin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message || 'Something went wrong during signin.');
+        }
+
+        // ==================================================
+        //                 মূল পরিবর্তন এখানে
+        // ==================================================
         
-        if (!formData.email || !formData.password) {
-            setError('অনুগ্রহ করে ইমেইল এবং পাসওয়ার্ড দিন।');
-            return;
-        }
+        // আগে ছিল: login(data.user);
+        // এখন হবে:
+        login(data); // <-- সম্পূর্ণ data অবজেক্টটি পাস করুন
 
-        setLoading(true);
+        // ==================================================
 
-        try {
-            const response = await fetch('/api/auth/signin', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                // API থেকে আসা এরর মেসেজ দেখান
-                throw new Error(data.message || 'Something went wrong during signin.');
-            }
-
-            // লগইন সফল হলে, কনটেক্সটের login ফাংশন কল করুন
-            // এই ফাংশনটি ইউজার ডেটা localStorage-এ সেভ করবে এবং ড্যাশবোর্ডে রিডাইরেক্ট করবে
-            login(data.user);
-
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
-    };
+    } catch (err) {
+        setError(err.message);
+    } finally {
+        setLoading(false);
+    }
+};
 
     return (
         <>

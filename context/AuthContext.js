@@ -3,48 +3,69 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-// 1. কনটেক্সট তৈরি করুন
 const AuthContext = createContext(null);
 
-// 2. কাস্টম প্রোভাইডার কম্পোনেন্ট তৈরি করুন
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true); // শুরুতে লোডিং স্টেট true থাকবে
+    const [token, setToken] = useState(null); // <-- ১. টোকেনের জন্য নতুন স্টেট
+    const [loading, setLoading] = useState(true);
     const router = useRouter();
 
-    // 3. localStorage থেকে ডেটা লোড করার জন্য useEffect ব্যবহার করুন
     useEffect(() => {
-        // এই কোডটি শুধু ক্লায়েন্ট-সাইডে রান হবে
         try {
             const storedUser = localStorage.getItem('user');
-            if (storedUser) {
+            const storedToken = localStorage.getItem('authToken'); // <-- ২. লোকাল স্টোরেজ থেকে টোকেন আনা
+
+            if (storedUser && storedToken) {
+                // ইউজার এবং টোকেন দুটোই পেলে state-এ সেট করবে
                 setUser(JSON.parse(storedUser));
+                setToken(storedToken);
             }
         } catch (error) {
-            console.error("Failed to parse user from localStorage", error);
+            console.error("Failed to parse user data from localStorage:", error);
+            // কোনো সমস্যা হলে সবকিছু পরিষ্কার করে দেবে
             localStorage.removeItem('user');
+            localStorage.removeItem('authToken');
         } finally {
-            setLoading(false); // ডেটা লোড হওয়ার পর লোডিং স্টেট false করুন
+            setLoading(false);
         }
     }, []);
 
-    // 4. লগইন ফাংশন
-    const login = (userData) => {
-        setUser(userData);
-        localStorage.setItem('user', JSON.stringify(userData));
-        router.push('/dashboard'); // লগইন করার পর ড্যাশবোর্ডে পাঠান
+    // লগইন ফাংশন (এখন API থেকে আসা সম্পূর্ণ ডেটা নেবে)
+    const login = (loginData) => {
+        // এখন আমরা আশা করছি loginData'র ভেতরে user এবং token দুটোই থাকবে
+        // যেমন: { user: { id: 1, name: 'Asad', role: 'ADMIN' }, token: 'xyz...' }
+        const { user, token } = loginData;
+
+        if (!user || !token || !user.role) {
+            console.error("Login failed: Data must include user, token, and role.");
+            return;
+        }
+
+        // <-- ৩. ইউজার এবং টোকেন দুটোই state ও localStorage-এ সেট করা
+        setUser(user);
+        setToken(token);
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('authToken', token);
+
+        router.push('/dashboard');
     };
 
-    // 5. লগআউট ফাংশন
+    // লগআউট ফাংশন
     const logout = () => {
+        // <-- ৪. লগআউটের সময় সবকিছু মুছে ফেলা
         setUser(null);
+        setToken(null);
         localStorage.removeItem('user');
-        router.push('/signin'); // লগআউট করার পর সাইনইন পেজে পাঠান
+        localStorage.removeItem('authToken');
+        router.push('/signin');
     };
 
-    // 6. ভ্যালুগুলো প্রোভাইডারের মাধ্যমে পাস করুন
     const value = {
         user,
+        token, // <-- ৫. টোকেনকে value-এর মাধ্যমে পাঠানো
+        role: user ? user.role : null,
+        isAuthenticated: !!user && !!token,
         loading,
         login,
         logout,
@@ -52,15 +73,15 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={value}>
-            {children}
+            {!loading && children}
         </AuthContext.Provider>
     );
 };
 
-// 7. একটি কাস্টম হুক তৈরি করুন যাতে সহজে কনটেক্সট ব্যবহার করা যায়
+// কাস্টম হুক (এখানে কোনো পরিবর্তন নেই)
 export const useAuth = () => {
     const context = useContext(AuthContext);
-    if (!context) {
+    if (context === undefined) {
         throw new Error('useAuth must be used within an AuthProvider');
     }
     return context;

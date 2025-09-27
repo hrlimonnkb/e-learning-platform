@@ -20,7 +20,8 @@ const Navbar = () => {
         { href: "/career-guideline", text: "ক্যারিয়ার গাইডলাইন" },
         { href: "/contact", text: "যোগাযোগ" },
     ];
-    
+    const IMG_URL="http://localhost:3001"
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -55,9 +56,9 @@ const Navbar = () => {
                     >
                         <span className="sr-only">Open user menu</span>
                         {user.image ? (
-                            <Image
+                            <img
                                 className="h-9 w-9 rounded-full"
-                                src={user.image}
+                                src={`${IMG_URL}/${user.image}`}
                                 alt={user.name || 'User'}
                                 width={36}
                                 height={36}

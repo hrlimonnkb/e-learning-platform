@@ -67,3 +67,54 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+// TeachingMode enum আগের মতোই থাকবে
+enum TeachingMode {
+  LIVE
+  PRE_RECORDED
+  HYBRID
+}
+
+// নতুন: শিক্ষকের স্ট্যাটাসের জন্য enum
+enum TeacherStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Teacher {
+  id                  String   @id @default(cuid())
+  fullName            String
+  email               String   @unique
+  mobileNumber        String?
+  profilePhoto        String?
+  dateOfBirth         DateTime?
+
+  username            String   @unique
+  password            String
+
+  shortBio            String
+  detailedBio         String?
+  skills              Skill[]
+  certifications      String[]
+  socialLinks         String[]
+
+  subjects            String[]
+  preferredLanguage   String
+  teachingMode        TeachingMode
+  availability        String?
+
+  bankName            String?
+  accountNumber       String?
+  paypalOrStripeId    String?
+  taxId               String?
+
+  termsAccepted       Boolean
+  identityVerification String?
+  backgroundCheck     String?
+
+  // নতুন স্ট্যাটাস ফিল্ড যোগ করা হয়েছে
+  status              TeacherStatus @default(PENDING)
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
