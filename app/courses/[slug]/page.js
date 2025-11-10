@@ -8,7 +8,7 @@ import ReactPlayer from 'react-player';
 import { useAuth } from '@/context/AuthContext';
 import VideoModal from '@/components/VideoModal'; // Make sure this path is correct
 
-const API_BASE_URL = 'http://localhost:3001';
+const API_BASE_URL = 'https://api.microskill.com.bd';
 
 // --- Skeleton & FormSection components (assuming they are defined as before) ---
 const Skeleton = ({ className }) => <div className={`bg-gray-200 rounded-md animate-pulse ${className}`} />;

@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/8801609101537?text=Hi!%20I%20need%20help%20From%20banglavoiceai"
+            href="https://wa.me/8801609101537?text=Hi!%20I%20need%20help%20From%20microskills."
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 flex items-center justify-center"

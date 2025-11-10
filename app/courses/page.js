@@ -6,7 +6,7 @@ import { BookOpen, User, DollarSign, Clock, Users, ArrowRight, ChevronDown } fro
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-const API_BASE_URL = 'http://localhost:3001';
+const API_BASE_URL = 'https://api.microskill.com.bd';
 
 // --- Skeleton Component for Course Cards ---
 const CourseCardSkeleton = () => (
