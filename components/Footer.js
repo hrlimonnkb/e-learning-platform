@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Twitter, Linkedin, Facebook, Github, Dribbble } from 'lucide-react';
 
-// !! 1. UPDATE THIS PATH to your new logo
+
 const logoSrc = "/logo.png"; // Example: "/weekend-logo.png"
 
 const Footer = () => {
