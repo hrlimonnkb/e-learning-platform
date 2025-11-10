@@ -167,7 +167,7 @@ const PopularClassSection = () => {
           Our Most Popular Class
         </h2>
         <p className="text-center text-base text-gray-600 mt-4 mb-12 max-w-lg mx-auto">
-          Let's join our famous class, the knowledge provided will definitely be useful for you.
+          Let join our famous class, the knowledge provided will definitely be useful for you.
         </p>
         
         {/* Swiper Slider */}
