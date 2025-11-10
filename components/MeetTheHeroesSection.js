@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Twitter, Linkedin } from 'lucide-react';
 
-// --- Demo Data ---
+
 // !! Replace imageSrc paths with your actual image paths in /public
 const tutorsData = [
   {
