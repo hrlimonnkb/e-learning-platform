@@ -5,38 +5,37 @@ import Image from 'next/image';
 
 // Swiper-এর কম্পোনেন্ট এবং মডিউল Import করুন
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules'; // Autoplay যোগ করা হয়েছে
+import { Pagination, Autoplay } from 'swiper/modules';
 
 // Swiper-এর CSS Import করুন
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-// --- Demo Data ---
-// !! Replace logoSrc and avatar paths with your actual image paths in /public
+// --- ডেমো ডেটা (বাংলায় অনুবাদিত) ---
 const testimonialsData = [
   {
     id: 1,
-    logoSrc: "/logo.png", // !! আপনার লোগোর পাথ দিন
-    quote: "Courses was fantastic! It is Master platform for those looking to start a new career, or need a refresher.",
-    avatarSrc: "/assets/Image(4).png", // !! আপনার অ্যাভার্টারের পাথ দিন
-    name: "Jacob Jones",
-    title: "Student, National University",
+    logoSrc: "/logo.png",
+    quote: "এই কোর্সটি অসাধারণ! যারা নতুন ক্যারিয়ার শুরু করতে চান বা পুরনো জ্ঞান ঝালিয়ে নিতে চান তাদের জন্য এটি একটি দারুণ প্ল্যাটফর্ম।",
+    avatarSrc: "/assets/Image(4).png",
+    name: "জ্যাকব জোন্স",
+    title: "শিক্ষার্থী, ন্যাশনাল ইউনিভার্সিটি",
   },
   {
     id: 2,
-    logoSrc: "/logo.png", // !! আপনার লোগোর পাথ দিন
-    quote: "Weekend UX transformed my career path. The instructors are top-notch and the content is incredibly relevant.",
-    avatarSrc: "/assets/Image(5).png", // !! আপনার অ্যাভার্টারের পাথ দিন
-    name: "Jane Smith",
-    title: "Product Designer, Tech Corp",
+    logoSrc: "/logo.png",
+    quote: "Weekend UX আমার ক্যারিয়ার পরিবর্তন করেছে। প্রশিক্ষকরা অসাধারণ এবং কনটেন্টটি অত্যন্ত প্রাসঙ্গিক।",
+    avatarSrc: "/assets/Image(5).png",
+    name: "জেন স্মিথ",
+    title: "প্রোডাক্ট ডিজাইনার, টেক কর্প",
   },
   {
     id: 3,
-    logoSrc: "/logo.png", // !! আপনার লোগোর পাথ দিন
-    quote: "A truly engaging learning environment. I highly recommend Weekend UX to anyone serious about design.",
-    avatarSrc: "/assets/Image(6).png", // !! আপনার অ্যাভার্টারের পাথ দিন
-    name: "Emily White",
-    title: "UX Researcher, Global Innovations",
+    logoSrc: "/logo.png",
+    quote: "একটি সত্যিকারের আকর্ষণীয় শেখার পরিবেশ। যারা ডিজাইনে সিরিয়াস, তাদের জন্য Weekend UX অত্যন্ত সুপারিশযোগ্য।",
+    avatarSrc: "/assets/Image(6).png",
+    name: "এমিলি হোয়াইট",
+    title: "UX রিসার্চার, গ্লোবাল ইনোভেশন্স",
   },
 ];
 
@@ -50,19 +49,19 @@ const TestimonialSection = () => {
         
         {/* Swiper Slider */}
         <Swiper
-          modules={[Pagination, Autoplay]} // Pagination এবং Autoplay মডিউল যোগ করুন
-          spaceBetween={30} // স্লাইডগুলোর মধ্যে স্পেস
-          slidesPerView={1} // সবসময় 1টি স্লাইড দেখাবে
-          loop={true} // লুপ মোড চালু করুন
+          modules={[Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          loop={true}
           autoplay={{
-            delay: 5000, // 5 সেকেন্ড পর পর স্লাইড পরিবর্তন হবে
-            disableOnInteraction: false, // ইউজার ক্লিক করলেও অটোপ্লে বন্ধ হবে না
+            delay: 5000,
+            disableOnInteraction: false,
           }}
           pagination={{
-            el: '.swiper-pagination-testimonial', // কাস্টম ডট ব্যবহারের জন্য
-            clickable: true, // ডট-এ ক্লিক করা যাবে
+            el: '.swiper-pagination-testimonial',
+            clickable: true,
           }}
-          className="pb-16!" // ডট-এর জন্য নিচে প্যাডিং
+          className="pb-16!"
         >
           {testimonialsData.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
@@ -72,7 +71,7 @@ const TestimonialSection = () => {
                 <Image
                   src={testimonial.logoSrc}
                   alt="Weekend UX Logo"
-                  width={100} // লোগোর সাইজ আপনার ছবির সাথে মিলিয়ে দিন
+                  width={100}
                   height={30}
                   className="mx-auto h-8 w-auto mb-8"
                 />
@@ -105,7 +104,7 @@ const TestimonialSection = () => {
         
         {/* Custom Pagination Dots */}
         <div className="swiper-pagination-testimonial flex justify-center items-center gap-2 mt-8">
-          {/* Swiper.js will populate this */}
+          {/* Swiper.js এখানে ডট বসাবে */}
         </div>
         
       </div>

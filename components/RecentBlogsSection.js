@@ -2,53 +2,49 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// --- Demo Data ---
-// !! Replace imageSrc paths with your actual image paths in /public
+// --- ডেমো ডেটা (বাংলায় অনুবাদিত) ---
 const smallBlogs = [
   {
     id: 1,
-    imageSrc:  "/assets/Image(4).png", // !! Update this path
-    date: "November 16, 2014",
-    title: "Three Pillars of User Delight",
-    description: "Delight can be experienced viscerally, behaviourally, and reflectively. A great design is ...",
+    imageSrc:  "/assets/Image(4).png",
+    date: "১৬ নভেম্বর, ২০১৪",
+    title: "ইউজার আনন্দের তিনটি স্তম্ভ",
+    description: "আনন্দ অনুভব করা যায় শারীরিকভাবে, আচরণগতভাবে এবং চিন্তাগতভাবে। একটি চমৎকার ডিজাইন হল ...",
     tags: [
-      { label: "Research", color: "pink" },
+      { label: "গবেষণা", color: "pink" },
       { label: "UI UX", color: "blue" },
     ],
   },
   {
     id: 2,
-    imageSrc: "/assets/Image(5).png", // !! Update this path
-    date: "September 24, 2017",
-    title: "UX Mapping Methods",
-    description: "Visual-design principles can be applied consistently throughout the process of creating a polished UX map...",
+    imageSrc: "/assets/Image(5).png",
+    date: "২৪ সেপ্টেম্বর, ২০১৭",
+    title: "UX ম্যাপিং পদ্ধতি",
+    description: "ভিজ্যুয়াল-ডিজাইনের নীতিগুলো একটি পরিপূর্ণ UX মানচিত্র তৈরি করার সময় ধারাবাহিকভাবে প্রয়োগ করা যেতে পারে...",
     tags: [
-      { label: "Research", color: "pink" },
-      { label: "UI Design", color: "blue" },
+      { label: "গবেষণা", color: "pink" },
+      { label: "UI ডিজাইন", color: "blue" },
     ],
   },
 ];
 
 const largeBlog = {
   id: 3,
-  imageSrc: "/assets/Image(6).png", // !! Update this path
-  date: "March 13, 2014",
-  title: "Agile Development Projects and Usability",
-  description: "Agile methods aim to overcome usability barriers in traditional development, but post new threats to user experience quality.",
+  imageSrc: "/assets/Image(6).png",
+  date: "১৩ মার্চ, ২০১৪",
+  title: "অ্যাজাইল ডেভেলপমেন্ট প্রজেক্ট ও ব্যবহারযোগ্যতা",
+  description: "অ্যাজাইল পদ্ধতি ঐতিহ্যবাহী ডেভেলপমেন্টে ব্যবহারযোগ্যতার বাধা দূর করতে চায়, তবে এটি ব্যবহারকারীর অভিজ্ঞতার মানের নতুন হুমকিও তৈরি করে।",
   tags: [
-    { label: "Programming", color: "orange" },
-    { label: "Research", color: "indigo" },
-    { label: "Developments", color: "pink" }, // Assuming this is the same pink
+    { label: "প্রোগ্রামিং", color: "orange" },
+    { label: "গবেষণা", color: "indigo" },
+    { label: "ডেভেলপমেন্ট", color: "pink" },
   ],
 };
-// --- End Demo Data ---
+// --- ডেটা শেষ ---
 
 
 /**
  * Reusable Tag Component
- * @param {object} props
- * @param {string} props.label - The text for the tag
- * @param {'pink' | 'blue' | 'orange' | 'indigo'} props.color - The color variant
  */
 const BlogTag = ({ label, color }) => {
   const colorClasses = {
@@ -81,7 +77,7 @@ const SmallBlogCard = ({ blog }) => {
       <div className="flex flex-col justify-center">
         <p className="text-sm text-gray-500">{blog.date}</p>
         <Link href={`/blog/${blog.id}`} passHref>
-          <span className="text-xl font-bold text-gray-900 mt-2 block transition-colors duration-300 group-hover:text-emerald-600">
+          <span className="text-xl font-bold text-gray-900 mt-2 block transition-colors duration-300 group-hover:text-[#f97316]">
             {blog.title}
           </span>
         </Link>
@@ -114,7 +110,7 @@ const LargeBlogCard = ({ blog }) => {
       <div className="mt-6">
         <p className="text-sm text-gray-500">{blog.date}</p>
         <Link href={`/blog/${blog.id}`} passHref>
-          <span className="text-2xl font-bold text-gray-900 mt-2 block transition-colors duration-300 group-hover:text-emerald-600">
+          <span className="text-2xl font-bold text-gray-900 mt-2 block transition-colors duration-300 group-hover:text-[#f97316]">
             {blog.title}
           </span>
         </Link>
@@ -141,20 +137,20 @@ const RecentBlogsSection = () => {
         
         {/* Section Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
-          Our recent blogs
+          আমাদের সাম্প্রতিক ব্লগসমূহ
         </h2>
         
         {/* Blog Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
           
-          {/* Left Column (Small Cards) */}
+          {/* বাম দিকের ছোট ব্লগ কার্ড */}
           <div className="flex flex-col gap-10">
             {smallBlogs.map((blog) => (
               <SmallBlogCard key={blog.id} blog={blog} />
             ))}
           </div>
           
-          {/* Right Column (Large Card) */}
+          {/* ডান দিকের বড় ব্লগ কার্ড */}
           <div className="mt-4 lg:mt-0">
             <LargeBlogCard blog={largeBlog} />
           </div>

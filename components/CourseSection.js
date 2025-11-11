@@ -17,65 +17,64 @@ import 'swiper/css/pagination';
 const coursesData = [
   {
     id: 1,
-    imgSrc: "/assets/Image(4).png", // !! আপনার ছবির পাথ দিন
-    time: "08 hr 12 mins",
-    category: "Design",
-    title: "Figma UI UX Design..",
-    description: "Use Figma to get a job in UI Design, User Interface, User Experience design.",
+    imgSrc: "/assets/Image(4).png",
+    time: "০৮ ঘন্টা ১২ মিনিট",
+    category: "ডিজাইন",
+    title: "ফিগমা UI UX ডিজাইন",
+    description: "UI ও UX ডিজাইন শেখার জন্য ফিগমা ব্যবহার করুন এবং প্রফেশনাল হন।",
     rating: 4.3,
     reviews: 16325,
     instructor: {
-      avatar: "/assets/Avatar.png", // !! আপনার ছবির পাথ দিন
-      name: "Jane Cooper",
+      avatar: "/assets/Avatar.png",
+      name: "জেন কুপার",
       enrolled: 2001,
     },
     price: 17.84,
   },
   {
     id: 2,
-    imgSrc: "/assets/Image(5).png", // !! আপনার ছবির পাথ দিন
-    time: "06 hr 3 mins",
-    category: "Design",
-    title: "Learn With Shoaib",
-    description: "Design Web Sites and Mobile Apps that Your Users Love and Return to Again.",
+    imgSrc: "/assets/Image(5).png",
+    time: "০৬ ঘন্টা ৩ মিনিট",
+    category: "ডিজাইন",
+    title: "শোয়েবের সাথে শেখো",
+    description: "ওয়েবসাইট ও মোবাইল অ্যাপ ডিজাইন শেখো যা ব্যবহারকারীরা ভালোবাসবে।",
     rating: 3.9,
     reviews: 832,
     instructor: {
-      avatar: "/assets/Avatar(1).png", // !! আপনার ছবির পাথ দিন
-      name: "Jenny Wilson",
+      avatar: "/assets/Avatar(1).png",
+      name: "জেনি উইলসন",
       enrolled: 2001,
     },
     price: 8.99,
   },
   {
     id: 3,
-    imgSrc: "/assets/Image(6).png", // !! আপনার ছবির পাথ দিন
-    time: "01 hr 2 mins",
-    category: "Design",
-    title: "Building User Interface..",
-    description: "Learn how to apply User Experience (UX) principles to your website designs.",
+    imgSrc: "/assets/Image(6).png",
+    time: "০১ ঘন্টা ২ মিনিট",
+    category: "ডিজাইন",
+    title: "ইউজার ইন্টারফেস তৈরি করা",
+    description: "ওয়েব ডিজাইনে ইউজার এক্সপেরিয়েন্স (UX) নীতিমালা কিভাবে প্রয়োগ করতে হয় তা শিখুন।",
     rating: 4.2,
     reviews: 125,
     instructor: {
-      avatar: "/assets/Avatar.png", // !! আপনার ছবির পাথ দিন
-      name: "Esther Howard",
+      avatar: "/assets/Avatar.png",
+      name: "এস্থার হাওয়ার্ড",
       enrolled: 2001,
     },
     price: 11.70,
   },
-  // আপনি এখানে আরও স্লাইড যোগ করতে পারেন
   {
     id: 4,
-     imgSrc: "/assets/Image(5).png", // !! আপনার ছবির পাথ দিন
-    time: "05 hr 15 mins",
-    category: "Development",
-    title: "React Full Course",
-    description: "Learn React from scratch and build powerful web applications.",
+    imgSrc: "/assets/Image(5).png",
+    time: "০৫ ঘন্টা ১৫ মিনিট",
+    category: "ডেভেলপমেন্ট",
+    title: "রিয়্যাক্ট ফুল কোর্স",
+    description: "শুরু থেকে রিয়্যাক্ট শেখো এবং শক্তিশালী ওয়েব অ্যাপ তৈরি করো।",
     rating: 4.8,
     reviews: 20450,
     instructor: {
-    avatar: "/assets/Avatar(1).png", // !! আপনার ছবির পাথ দিন
-      name: "Jane Cooper",
+      avatar: "/assets/Avatar(1).png",
+      name: "জেন কুপার",
       enrolled: 5012,
     },
     price: 19.99,
@@ -90,7 +89,7 @@ const coursesData = [
 const PopularClassCard = ({ course }) => {
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl h-full flex flex-col group">
-      {/* 1. Image and Time */}
+      {/* ১. ছবি ও সময় */}
       <div className="relative">
         <Image
           src={course.imgSrc}
@@ -105,14 +104,14 @@ const PopularClassCard = ({ course }) => {
         </div>
       </div>
       
-      {/* 2. Card Content */}
+      {/* ২. কার্ডের কনটেন্ট */}
       <div className="p-5 flex flex-col flex-grow">
-        <p className="text-emerald-600 font-medium text-sm">{course.category}</p>
+        <p className="text-[#f97316] font-medium text-sm">{course.category}</p>
         
         <Link href={`/course/${course.id}`} className="block mt-1">
-          <h3 className="text-xl font-bold text-gray-900 flex justify-between items-center transition-colors duration-300 group-hover:text-emerald-600">
+          <h3 className="text-xl font-bold text-gray-900 flex justify-between items-center transition-colors duration-300 group-hover:text-[#f97316]">
             {course.title}
-            <MoveRight className="w-5 h-5 text-gray-400 transition-colors duration-300 group-hover:text-emerald-600" />
+            <MoveRight className="w-5 h-5 text-gray-400 transition-colors duration-300 group-hover:text-[#f97316]" />
           </h3>
         </Link>
         
@@ -120,7 +119,7 @@ const PopularClassCard = ({ course }) => {
           {course.description}
         </p>
         
-        {/* 3. Rating */}
+        {/* ৩. রেটিং */}
         <div className="flex items-center gap-1.5 mt-3">
           <span className="font-bold text-gray-800 text-sm">{course.rating}</span>
           <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
@@ -129,7 +128,7 @@ const PopularClassCard = ({ course }) => {
         
         <hr className="my-4 border-gray-100" />
         
-        {/* 4. Instructor and Price */}
+        {/* ৪. প্রশিক্ষক ও মূল্য */}
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Image
@@ -141,10 +140,10 @@ const PopularClassCard = ({ course }) => {
             />
             <div>
               <p className="text-sm font-semibold text-gray-900">{course.instructor.name}</p>
-              <p className="text-xs text-gray-500">{course.instructor.enrolled.toLocaleString()} Enrolled</p>
+              <p className="text-xs text-gray-500">{course.instructor.enrolled.toLocaleString()} জন ভর্তি হয়েছে</p>
             </div>
           </div>
-          <p className="text-2xl font-bold text-emerald-600">${course.price}</p>
+          <p className="text-2xl font-bold text-[#f97316]">${course.price}</p>
         </div>
       </div>
     </div>
@@ -160,14 +159,14 @@ const PopularClassSection = () => {
       <div className="max-w-7xl mx-auto  px-4">
         
         {/* Section Headings */}
-        <p className="text-center text-emerald-600 font-semibold">
-          Explore Programs
+        <p className="text-center text-[#f97316] font-semibold">
+          কোর্স প্রোগ্রামসমূহ দেখুন
         </p>
         <h2 className="text-center text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-          Our Most Popular Class
+          আমাদের সবচেয়ে জনপ্রিয় ক্লাসসমূহ
         </h2>
         <p className="text-center text-base text-gray-600 mt-4 mb-12 max-w-lg mx-auto">
-          Let join our famous class, the knowledge provided will definitely be useful for you.
+          আমাদের জনপ্রিয় কোর্সে যুক্ত হোন — শিখুন এমন দক্ষতা যা আপনার ভবিষ্যতে কাজে লাগবে।
         </p>
         
         {/* Swiper Slider */}
@@ -183,7 +182,7 @@ const PopularClassSection = () => {
             640: { slidesPerView: 2, spaceBetween: 20 },
             1024: { slidesPerView: 3, spaceBetween: 30 },
           }}
-          className="pb-20!" // ডট-এর জন্য নিচে প্যাডিং
+          className="pb-20!"
         >
           {coursesData.map((course) => (
             <SwiperSlide key={course.id} style={{ height: 'auto' }}>
@@ -194,7 +193,7 @@ const PopularClassSection = () => {
         
         {/* Custom Pagination Dots */}
         <div className="swiper-pagination-popular-class flex justify-center items-center gap-2">
-          {/* Swiper.js will populate this */}
+          {/* Swiper.js এখানে ডট বসাবে */}
         </div>
         
         {/* "Explore All" Button */}
@@ -203,7 +202,7 @@ const PopularClassSection = () => {
             href="/all-programs" 
             className="inline-block px-7 py-3 border border-gray-300 rounded-lg text-base font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all"
           >
-            Explore All Programs
+            সব কোর্স দেখুন
           </Link>
         </div>
 

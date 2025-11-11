@@ -1,5 +1,8 @@
+/* সব @import একদম উপরে রাখো */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* তারপর তোমার custom CSS */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -22,13 +25,12 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Hind Siliguri", sans-serif!important;
 }
-.swiper-pagination-bullet-active {
-    
-    background-color: #059669!important; /* সবুজ রঙ (emerald-600) */
-  
 
+/* তোমার swiper pagination styles */
+.swiper-pagination-bullet-active {
+  background-color: #f97316 !important;
 }
 /* === Popular Class Swiper Pagination Dots === */
 
@@ -55,7 +57,7 @@ body {
 
 /* অ্যাক্টিভ ডট (আপনার ছবির মতো সবুজ এবং লম্বা) */
 .swiper-pagination-popular-class .swiper-pagination-bullet-active {
-  background-color: #059669; /* সবুজ রঙ (emerald-600) */
+  background-color: #f97316; /* সবুজ রঙ ([#f97316]) */
   width: 20px; /* লম্বা করার জন্য */
 }
 
@@ -84,6 +86,6 @@ body {
 
 /* অ্যাক্টিভ ডট (আপনার ছবির মতো সবুজ এবং লম্বা) */
 .swiper-pagination-testimonial .swiper-pagination-bullet-active {
-  background-color: #059669; /* সবুজ রঙ (emerald-600) */
+  background-color: #f97316; /* সবুজ রঙ ([#f97316]) */
   width: 20px; /* লম্বা করার জন্য */
 }

@@ -89,7 +89,7 @@ const SigninPage = () => {
                 <div className="w-full max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
                     
                     {/* Left Column */}
-                    <div style={{ backgroundColor: '#4F46E5' }} className="w-full md:w-2/5 text-white p-8 md:p-12 flex-col justify-center hidden md:flex">
+                    <div style={{ backgroundColor: '#f97316' }} className="w-full md:w-2/5 text-white p-8 md:p-12 flex-col justify-center hidden md:flex">
                         <h1 className="text-3xl font-bold mb-4">ই-লার্ণ</h1>
                         <p className="mb-8" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
                             জ্ঞান অর্জন করুন, সহজে শিখুন, একসাথে এগিয়ে যান।

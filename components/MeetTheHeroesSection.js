@@ -4,41 +4,41 @@ import Link from 'next/link';
 import { Twitter, Linkedin } from 'lucide-react';
 
 
-// !! Replace imageSrc paths with your actual image paths in /public
+// !! আপনার /public ফোল্ডারে সঠিক imageSrc path দিন
 const tutorsData = [
   {
     id: 1,
     imageSrc: "/assets/Image(4).png",
-    name: "Theresa Webb",
-    title: "Application Support Analyst\nLead",
-    bio: "Former co-founder of Opendoor. Early staff at Spotify and Clearbit.",
+    name: "থেরেসা ওয়েব",
+    title: "অ্যাপ্লিকেশন সাপোর্ট অ্যানালিস্ট\nলিড",
+    bio: "Opendoor-এর সহ-প্রতিষ্ঠাতা। Spotify এবং Clearbit-এ প্রাক্তন সিনিয়র কর্মী।",
     twitterUrl: "#",
     linkedinUrl: "#",
   },
   {
     id: 2,
     imageSrc: "/assets/Image(6).png",
-    name: "Courtney Henry",
-    title: "Director, Undergraduate\nAnalytics and Planning",
-    bio: "Lead engineering teams at Figma, Pitch, and Protocol Labs.",
+    name: "কোর্টনি হেনরি",
+    title: "পরিচালক, স্নাতক\nঅ্যানালিটিক্স ও পরিকল্পনা বিভাগ",
+    bio: "Figma, Pitch এবং Protocol Labs-এর ইঞ্জিনিয়ারিং টিমের নেতৃত্ব দিয়েছেন।",
     twitterUrl: "#",
     linkedinUrl: "#",
   },
   {
     id: 3,
     imageSrc: "/assets/Image(5).png",
-    name: "Albert Flores",
-    title: "Career Educator",
-    bio: "Former PM for Linear, Lambda School, and On Deck.",
+    name: "আলবার্ট ফ্লোরেস",
+    title: "ক্যারিয়ার এডুকেটর",
+    bio: "Linear, Lambda School এবং On Deck-এ প্রাক্তন প্রোডাক্ট ম্যানেজার।",
     twitterUrl: "#",
     linkedinUrl: "#",
   },
   {
     id: 4,
     imageSrc: "/assets/Image(6).png",
-    name: "Marvin McKinney",
-    title: "Co-op & Internships Program\n& Operations Manager",
-    bio: "Former frontend dev for Linear, Coinbase, and Postscript.",
+    name: "মারভিন ম্যাককিনি",
+    title: "কো-অপ ও ইন্টার্নশিপ প্রোগ্রাম\nও অপারেশন ম্যানেজার",
+    bio: "Linear, Coinbase এবং Postscript-এর প্রাক্তন ফ্রন্টএন্ড ডেভেলপার।",
     twitterUrl: "#",
     linkedinUrl: "#",
   },
@@ -61,8 +61,8 @@ const TutorCard = ({ tutor }) => {
         {tutor.name}
       </h3>
       <p 
-        className="text-emerald-600 font-semibold mt-1" 
-        style={{ whiteSpace: 'pre-line' }} // This handles the line breaks in the title
+        className="text-[#f97316] font-semibold mt-1" 
+        style={{ whiteSpace: 'pre-line' }}
       >
         {tutor.title}
       </p>
@@ -71,12 +71,12 @@ const TutorCard = ({ tutor }) => {
       </p>
       <div className="flex items-center gap-4 mt-4 pt-2">
         <Link href={tutor.twitterUrl} passHref>
-          <span className="text-gray-400 hover:text-emerald-600 transition-colors">
+          <span className="text-gray-400 hover:text-[#f97316] transition-colors">
             <Twitter className="w-5 h-5" />
           </span>
         </Link>
         <Link href={tutor.linkedinUrl} passHref>
-          <span className="text-gray-400 hover:text-emerald-600 transition-colors">
+          <span className="text-gray-400 hover:text-[#f97316] transition-colors">
             <Linkedin className="w-5 h-5" />
           </span>
         </Link>
@@ -95,15 +95,15 @@ const MeetTheHeroesSection = () => {
         
         {/* Section Headings */}
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-emerald-600 font-semibold">
-            Tutors
+          <p className="text-[#f97316] font-semibold">
+            প্রশিক্ষকগণ
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-            Meet the Heroes
+            আমাদের নায়কদের সঙ্গে পরিচিত হোন
           </h2>
           <p className="text-lg text-gray-600 mt-4 mb-12">
-            On Weekend UX, instructors from all over the world instruct millions of students.
-            We offer the knowledge and abilities.
+            Weekend UX-এ বিশ্বের বিভিন্ন স্থান থেকে প্রশিক্ষকরা লক্ষাধিক শিক্ষার্থীকে প্রশিক্ষণ দেন।
+            আমরা জ্ঞান ও দক্ষতা ভাগাভাগি করি।
           </p>
         </div>
         

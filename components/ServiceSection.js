@@ -14,20 +14,17 @@ import 'swiper/css/pagination';
 
 /**
  * Reusable Card Component
- * (এই কম্পোনেন্টটি অপরিবর্তিত আছে)
- * @param {object} props
- * ... (বাকি props)
  */
 const ServiceCard = ({ icon, title, description, isHighlighted = false }) => {
-  const baseClasses = "rounded-2xl p-8 shadow-lg transition-all duration-300 hover:shadow-2xl flex flex-col space-y-4 h-full"; // h-full যোগ করা হয়েছে
+  const baseClasses = "rounded-2xl p-8 shadow-lg transition-all duration-300 hover:shadow-2xl flex flex-col space-y-4 h-full"; 
   
   const variantClasses = isHighlighted
-    ? "bg-emerald-600 text-white"
+    ? "bg-[#f97316] text-white"
     : "bg-white text-gray-900";
   
   const linkClasses = isHighlighted
     ? "text-white"
-    : "text-emerald-600";
+    : "text-[#f97316]";
   
   const descriptionClasses = isHighlighted 
     ? "text-emerald-50" 
@@ -37,27 +34,26 @@ const ServiceCard = ({ icon, title, description, isHighlighted = false }) => {
     <div className={`${baseClasses} ${variantClasses}`}>
       <div className="w-14 h-14">{icon}</div>
       <h3 className="text-2xl font-bold pt-2">{title}</h3>
-      <p className={`text-base ${descriptionClasses} flex-grow`}> {/* flex-grow যোগ করা হয়েছে */}
+      <p className={`text-base ${descriptionClasses} flex-grow`}>
         {description}
       </p>
       <Link href="#" className={`text-base font-semibold ${linkClasses} pt-2`}>
-        Learn More &gt;
+        আরও জানুন &gt;
       </Link>
     </div>
   );
 };
 
 // === কার্ডের ডেটা ===
-// আমরা ডেটা একটি অ্যারেতে রাখব যাতে স্লাইডার সহজে ম্যাপ করতে পারে
 const servicesData = [
   {
     icon: (
       <div className="bg-white p-3 rounded-xl flex items-center justify-center">
-        <AppWindow className="w-8 h-8 text-emerald-600" />
+        <AppWindow className="w-8 h-8 text-[#f97316]" />
       </div>
     ),
-    title: "Interaction Design",
-    description: "Lessons on design that cover the most recent developments.",
+    title: "ইন্টারঅ্যাকশন ডিজাইন",
+    description: "সর্বশেষ ডিজাইন ট্রেন্ড ও উন্নয়নের উপর ভিত্তি করে পাঠ।",
     isHighlighted: true,
   },
   {
@@ -66,8 +62,8 @@ const servicesData = [
         <LayoutTemplate className="w-8 h-8 text-indigo-600" />
       </div>
     ),
-    title: "UX Design Course",
-    description: "Classes in development that cover the most recent advancements in web.",
+    title: "ইউএক্স ডিজাইন কোর্স",
+    description: "ওয়েব ডেভেলপমেন্টের সাম্প্রতিক অগ্রগতির উপর ভিত্তি করে ক্লাস।",
     isHighlighted: false,
   },
   {
@@ -76,8 +72,8 @@ const servicesData = [
         <TrendingUp className="w-8 h-8 text-pink-600" />
       </div>
     ),
-    title: "User Interface Design",
-    description: "User Interface Design courses that cover the most recent trends.",
+    title: "ইউজার ইন্টারফেস ডিজাইন",
+    description: "ইউজার ইন্টারফেস ডিজাইন শেখার সর্বশেষ কোর্সসমূহ।",
     isHighlighted: false,
   },
   {
@@ -86,12 +82,11 @@ const servicesData = [
         <Presentation className="w-8 h-8 text-purple-600" />
       </div>
     ),
-    title: "Presentation Skills",
-    description: "Master the art of public speaking and effective presentation.",
+    title: "প্রেজেন্টেশন স্কিল",
+    description: "পাবলিক স্পিকিং ও কার্যকর প্রেজেন্টেশনের কলা আয়ত্ত করুন।",
     isHighlighted: false,
   },
 ];
-
 
 /**
  * The Main Service Section Component (Swiper সহ)
@@ -102,38 +97,35 @@ const ServiceSection = () => {
       <div className="max-w-7xl mx-auto px-4">
         
         {/* Section Headings */}
-        <p className="text-center text-emerald-600 font-semibold">
-          Our Services
+        <p className="text-center text-[#f97316] font-semibold">
+          আমাদের সেবা
         </p>
         <h2 className="text-center text-3xl md:text-4xl font-bold mt-2 mb-12 max-w-2xl mx-auto text-black">
-          Fostering a playful & engaging learning environment
+          মজাদার ও আকর্ষণীয় শেখার পরিবেশ গড়ে তুলি
         </h2>
         
-        {/* === আপডেটেড: Swiper Slider === */}
+        {/* === Swiper Slider === */}
         <Swiper
-          modules={[Pagination]} // Pagination মডিউলটি যোগ করুন
-          spaceBetween={30} // কার্ডগুলোর মধ্যে স্পেস
-          slidesPerView={1} // মোবাইলে ডিফল্টভাবে ১টি দেখাবে
+          modules={[Pagination]} 
+          spaceBetween={30} 
+          slidesPerView={1} 
           pagination={{
-            clickable: true, // ডট-এ ক্লিক করা যাবে
-            el: '.swiper-pagination-custom', // কাস্টম ডট ব্যবহারের জন্য
+            clickable: true,
+            el: '.swiper-pagination-custom',
           }}
           breakpoints={{
-            // 768px (md) থেকে বড় হলে ২টি দেখাবে
             768: {
               slidesPerView: 2,
               spaceBetween: 30,
             },
-            // 1024px (lg) থেকে বড় হলে ৩টি দেখাবে
             1024: {
               slidesPerView: 3,
               spaceBetween: 30,
             },
           }}
           className="pb-20!" 
-        
         >
-          {/* কার্ডের ডেটা ম্যাপ করে SwiperSlide তৈরি করুন */}
+          {/* কার্ড ম্যাপ */}
           {servicesData.map((service, index) => (
             <SwiperSlide key={index} style={{ height: 'auto' }}>
               <ServiceCard
@@ -146,7 +138,7 @@ const ServiceSection = () => {
           ))}
         </Swiper>
 
-        {/* কাস্টম Pagination Dots (আপনার ছবির মতো) */}
+        {/* কাস্টম Pagination Dots */}
         <div className="swiper-pagination-custom flex justify-center items-center gap-2 mt-8">
           {/* Swiper.js এই div-টিকে কন্ট্রোল করবে */}
         </div>

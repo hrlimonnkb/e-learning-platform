@@ -160,7 +160,7 @@ export default function AllCoursesPage() {
                                             </p>
 
                                             <Link href={`/courses/${course.slug}`} passHref>
-                                                <span className="w-full inline-flex items-center justify-center px-4 py-2 bg-emerald-600 text-white font-semibold rounded-md hover:bg-emerald-700 transition-colors duration-200 text-center">
+                                                <span className="w-full inline-flex items-center justify-center px-4 py-2 bg-[#f97316] text-white font-semibold rounded-md hover:bg-emerald-700 transition-colors duration-200 text-center">
                                                     কোর্সটি দেখুন
                                                     <ArrowRight size={18} className="ml-2" />
                                                 </span>

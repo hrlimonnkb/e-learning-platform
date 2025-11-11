@@ -18,13 +18,14 @@ const Navbar = () => {
     const dropdownRef = useRef(null);
 
     // 2. Updated Nav Links to match the image
-    const navLinks = [
-        { href: "/", text: "Home" },
-        { href: "/about", text: "About us" },
-        { href: "/courses", text: "Courses" },
-        { href: "/contact", text: "Contact us" },
-        { href: "/faq", text: "FAQ's" },
-    ];
+  const navLinks = [
+  { href: "/", text: "হোম" },
+  { href: "/about", text: "আমাদের সম্পর্কে" },
+  { href: "/courses", text: "কোর্সসমূহ" },
+  { href: "/contact", text: "যোগাযোগ" },
+  { href: "/faq", text: "প্রশ্নোত্তর" },
+];
+
     const IMG_URL="https://api.microskill.com.bd"
 
     useEffect(() => {
@@ -59,7 +60,7 @@ const Navbar = () => {
                 <div className="relative" ref={dropdownRef}>
                     <button
                         onClick={() => setIsDropdownOpen(prev => !prev)}
-                        className="flex items-center gap-2 rounded-full p-1 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
+                        className="flex items-center gap-2 rounded-full p-1 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:ring-offset-2"
                     >
                         <span className="sr-only">Open user menu</span>
                         {user.image ? (
@@ -79,11 +80,11 @@ const Navbar = () => {
                     {isDropdownOpen && (
                         <div className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-100 transform opacity-100 scale-100 z-50">
                             <div className="py-1">
-                                <Link href="/dashboard" onClick={() => setIsDropdownOpen(false)} className="group flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-emerald-500 hover:text-white">
+                                <Link href="/dashboard" onClick={() => setIsDropdownOpen(false)} className="group flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-[#f97316] hover:text-white">
                                     <LayoutDashboard className="mr-2 h-5 w-5" />
                                     ড্যাশবোর্ড
                                 </Link>
-                                <Link href="/settings" onClick={() => setIsDropdownOpen(false)} className="group flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-emerald-500 hover:text-white">
+                                <Link href="/settings" onClick={() => setIsDropdownOpen(false)} className="group flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-[#f97316] hover:text-white">
                                     <Settings className="mr-2 h-5 w-5" />
                                     সেটিংস
                                 </Link>
@@ -103,17 +104,17 @@ const Navbar = () => {
             <div className={`flex items-center gap-4 ${isMobile ? 'flex-col w-full' : ''}`}>
                 <Link 
                     href="/signin" 
-                    className="px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald-600" 
+                    className="px-3 py-2 text-base font-medium text-gray-700 hover:text-[#f97316]" 
                     onClick={() => isMobile && setIsMenuOpen(false)}
                 >
-                    Sign in
+                    লগইন
                 </Link>
                 <Link 
                     href="/signup" 
-                    className="px-5 py-3 text-sm text-center font-semibold text-white rounded-lg transition-colors w-full md:w-auto bg-emerald-600 hover:bg-emerald-700" 
+                    className="px-5 py-3 text-sm text-center font-semibold text-white rounded-lg transition-colors w-full md:w-auto bg-[#f97316] hover:bg-emerald-700" 
                     onClick={() => isMobile && setIsMenuOpen(false)}
                 >
-                    Create free account
+                    একটি ফ্রি একাউন্ট খুলুন
                 </Link>
             </div>
         );
@@ -140,11 +141,11 @@ const Navbar = () => {
                             </span>
                             <input 
                                 type="text" 
-                                placeholder="Want to learn?" 
-                                className="w-full pl-11 pr-32 py-3 border border-gray-200 rounded-lg text-sm text-gray-900 placeholder:text-gray-500 focus:ring-1 focus:border-emerald-500 focus:ring-emerald-500" 
+                                placeholder="কি শিখতে চাও?" 
+                                className="w-full pl-11 pr-32 py-3 border border-gray-200 rounded-lg text-sm text-gray-900 placeholder:text-gray-500 focus:ring-1 focus:border-[#f97316] focus:ring-[#f97316]" 
                             />
-                            <button className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-3 py-2 bg-emerald-50 text-emerald-600 rounded-md text-sm font-semibold hover:bg-emerald-100">
-                                Explore
+                            <button className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-3 py-2 bg-emerald-50 text-[#f97316] rounded-md text-sm font-semibold hover:bg-emerald-100">
+                                  অন্বেষণ করো
                                 <ChevronDown className="h-4 w-4" />
                             </button>
                         </div>
@@ -155,9 +156,9 @@ const Navbar = () => {
                                 <Link 
                                     key={link.href} 
                                     href={link.href} 
-                                    className={`text-base hover:text-emerald-600 ${
+                                    className={`text-base hover:text-[#f97316] ${
                                         link.text === "Home" 
-                                        ? 'text-emerald-600 font-bold' 
+                                        ? 'text-[#f97316] font-bold' 
                                         : 'text-gray-700 font-medium'
                                     }`}
                                 >
@@ -194,12 +195,13 @@ const Navbar = () => {
                             <input 
                                 type="text" 
                                 placeholder="Want to learn?" 
-                                className="w-full pl-11 pr-32 py-3 border border-gray-200 rounded-lg text-sm text-gray-900 placeholder:text-gray-500 focus:ring-1 focus:border-emerald-500 focus:ring-emerald-500" 
+                                className="w-full pl-11 pr-32 py-3 border border-gray-200 rounded-lg text-sm text-gray-900 placeholder:text-gray-500 focus:ring-1 focus:border-[#f97316] focus:ring-[#f97316]" 
                             />
-                            <button className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-3 py-2 bg-emerald-50 text-emerald-600 rounded-md text-sm font-semibold hover:bg-emerald-100">
-                                Explore
-                                <ChevronDown className="h-4 w-4" />
-                            </button>
+                         <button className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-3 py-2 bg-emerald-50 text-[#f97316] rounded-md text-sm font-semibold hover:bg-emerald-100">
+  অন্বেষণ করো
+  <ChevronDown className="h-4 w-4" />
+</button>
+
                         </div>
                         
                         {/* Mobile Nav Links */}
@@ -209,7 +211,7 @@ const Navbar = () => {
                                 href={link.href} 
                                 className={`block text-base font-medium ${
                                     link.text === "Home" 
-                                    ? 'text-emerald-600 font-bold' 
+                                    ? 'text-[#f97316] font-bold' 
                                     : 'text-gray-700'
                                 }`} 
                                 onClick={() => setIsMenuOpen(false)}

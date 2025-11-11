@@ -51,7 +51,7 @@ const useCountUp = (end, duration = 2000, startDelay = 200) => {
 
 const HeroSection = () => {
   return (
-     <section className="relative w-full text-gray-900 py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden bg-gradient-to-r from-white to-teal-50">
+     <section className="relative w-full text-gray-900 py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden bg-gradient-to-br from-orange-100 to-orange-200">
       {/* Background Decorative Circle Elements */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute -top-20 md:-top-40 -right-20 md:-right-40 w-[500px] h-[500px] md:w-[800px] md:h-[800px] rounded-full border-2 border-emerald-100 opacity-40" />
@@ -81,60 +81,59 @@ const HeroSection = () => {
           {/* Left Content Column */}
           <div className="w-full lg:w-1/2 text-center lg:text-left space-y-4 sm:space-y-6 lg:pt-8">
             <h1 className="text-3xl sm:text-4xl md:text-3xl lg:text-3xl xl:text-6xl font-bold leading-tight">
-              Up Your <span className="text-emerald-600">Skills</span>
+              তোমার <span className="text-[#f97316]">স্কিল</span> বাড়াও
               <br />
-              To <span className="text-emerald-600">Advance</span> Your
+              যাতে <span className="text-[#f97316]">ক্যারিয়ার</span> হয়
               <br />
-              <span className="text-emerald-600">Career Path</span>
+              আরও <span className="text-[#f97316]">অগ্রসর</span>
             </h1>
             
             <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-md mx-auto lg:mx-0 leading-relaxed">
-              Learn UI-UX Design skills with weekend UX. The latest online
-              learning system and material that help your knowledge growing.
+              উইকএন্ড UX এর সাথে UI-UX ডিজাইন শেখো। এটি একটি আধুনিক অনলাইন লার্নিং সিস্টেম যা তোমার জ্ঞান বাড়াতে সাহায্য করবে।
             </p>
             
             {/* Call-to-Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-2">
               <Link
                 href="/start"
-                className="px-6 sm:px-8 py-3 bg-emerald-600 text-white text-sm sm:text-base font-semibold rounded-lg shadow-md transition-all duration-300 hover:bg-emerald-700 hover:shadow-lg"
+                className="px-6 sm:px-8 py-3 bg-[#f97316] text-white text-sm sm:text-base font-semibold rounded-lg shadow-md transition-all duration-300 hover:bg-emerald-700 hover:shadow-lg"
               >
-                Get Started
+               শুরু করো
               </Link>
               <Link
                 href="/trial"
-                className="px-6 sm:px-8 py-3 bg-white text-emerald-600 text-sm sm:text-base font-semibold rounded-lg shadow-md border-2 border-emerald-600 transition-all duration-300 hover:bg-emerald-50"
+                className="px-6 sm:px-8 py-3 bg-white text-[#f97316] text-sm sm:text-base font-semibold rounded-lg shadow-md border-2 border-[#f97316] transition-all duration-300 hover:bg-emerald-50"
               >
-                Get free trial
+              ফ্রি ট্রায়াল নাও
               </Link>
             </div>
             
             {/* Icon List */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-4 sm:pt-6">
               <div className="flex items-center gap-2 text-gray-700">
-                <svg className="text-emerald-600 w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="text-[#f97316] w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                   <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                   <line x1="12" y1="19" x2="12" y2="23"></line>
                 </svg>
-                <span className="text-xs sm:text-sm md:text-base">Public Speaking</span>
+               <span className="text-xs sm:text-sm md:text-base">পাবলিক স্পিকিং</span>
               </div>
               
               <div className="flex items-center gap-2 text-gray-700">
-                <svg className="text-emerald-600 w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="text-[#f97316] w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                   <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                 </svg>
-                <span className="text-xs sm:text-sm md:text-base">Career-Oriented</span>
+                <span className="text-xs sm:text-sm md:text-base">ক্যারিয়ার ফোকাসড</span>
               </div>
               
               <div className="flex items-center gap-2 text-gray-700">
-                <svg className="text-emerald-600 w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="text-[#f97316] w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.7.8 1.3 1.5 1.5 2.5"></path>
                   <path d="M9 18h6"></path>
                   <path d="M10 22h4"></path>
                 </svg>
-                <span className="text-xs sm:text-sm md:text-base">Creative Thinking</span>
+                 <span className="text-xs sm:text-sm md:text-base">সৃজনশীল চিন্তা</span>
               </div>
             </div>
           </div>
@@ -143,7 +142,7 @@ const HeroSection = () => {
           <div className="w-full lg:w-1/2 flex justify-center items-center relative mt-8 lg:mt-0 min-h-[350px] sm:min-h-[450px] md:min-h-[550px] lg:min-h-[600px]">
             
             {/* Main Green Circle BG */}
-            <div className="absolute bg-emerald-600 w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[450px] md:h-[450px] lg:w-[520px] lg:h-[520px] xl:w-[580px] xl:h-[580px] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0" />
+            <div className="absolute bg-[#f97316] w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[450px] md:h-[450px] lg:w-[520px] lg:h-[520px] xl:w-[580px] xl:h-[580px] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0" />
             
             {/* Hero Image Container */}
             <div className="relative w-[240px] sm:w-[300px] md:w-[380px] lg:w-[440px] xl:w-[500px] z-10">
@@ -161,7 +160,7 @@ const HeroSection = () => {
             <div className="absolute top-4 sm:top-8 md:top-12 lg:top-16 left-0 sm:-left-4 md:-left-8 lg:-left-12 z-20">
               <StatCard
                 icon={
-                  <svg className="text-emerald-600 w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg className="text-[#f97316] w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <polygon points="10 8 16 12 10 16 10 8"></polygon>
                   </svg>
@@ -185,7 +184,7 @@ const HeroSection = () => {
             <div className="absolute bottom-4 sm:bottom-8 md:bottom-12 lg:bottom-16 right-0 sm:-right-4 md:-right-8 lg:-right-12 z-20">
               <StatCard
                 icon={
-                  <svg className="text-emerald-600 w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg className="text-[#f97316] w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                   </svg>
@@ -221,8 +220,9 @@ const HeroSection = () => {
             
             {/* আইটেম ১: Text */}
             <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 shrink-0 z-10">
-             <span className='text-emerald-600 text-2xl font-bold leading-tight'> 250+ </span>
-              <h6>Collaboration</h6>
+           <span className='text-[#f97316] text-2xl font-bold leading-tight'>২৫০+ </span>
+<h6>সহযোগি প্রতিষ্ঠানসমূহ</h6>
+
             </h3>
 
             {/* আইটেম ২-৫: Logos */}
@@ -295,7 +295,7 @@ const ProgressStatCard = ({ value, label, delay = 0 }) => {
             cy="50" 
           />
           <circle
-            className="text-emerald-600 transition-all duration-2000 ease-out"
+            className="text-[#f97316] transition-all duration-2000 ease-out"
             strokeWidth="8"
             strokeDasharray={circumference}
             strokeDashoffset={offset}
