@@ -77,7 +77,7 @@ const FileUploadField = ({ onFileSelect, preview, Icon, acceptedFiles, helpText,
                 ) : (
                     <div className="space-y-1">
                         <Icon className="mx-auto h-12 w-12 text-slate-400" />
-                        <span className="mt-2 block text-sm font-semibold text-indigo-600">
+                        <span className="mt-2 block text-sm font-semibold text-[#ea670c]">
                             {fileInfo ? 'Change file' : 'Upload a file'}
                         </span>
                         <span className="block text-xs text-slate-500">or drag and drop</span>
@@ -272,31 +272,31 @@ export default function ManageCoursePage() {
                 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                     <div className="lg:col-span-2 space-y-8">
-                        <FormSection title="বেসিক তথ্য" icon={<BookOpen className="mr-3 h-6 w-6 text-indigo-600"/>}>
+                        <FormSection title="বেসিক তথ্য" icon={<BookOpen className="mr-3 h-6 w-6 text-[#ea670c]"/>}>
                             <InputField name="title" value={formData.title} onChange={handleChange} label="কোর্সের শিরোনাম" placeholder="e.g., Complete Web Development" />
                             <InputField name="slug" value={formData.slug} onChange={handleChange} label="স্লাগ (URL)" placeholder="e.g., complete-web-development" disabled={isEditMode} />
                             <TextareaField name="description" value={formData.description} onChange={handleChange} label="কোর্সের বর্ণনা" placeholder="A detailed description of the course..." />
                         </FormSection>
 
-                        <FormSection title="ইন্সট্রাক্টর তথ্য" icon={<User className="mr-3 h-6 w-6 text-indigo-600"/>}>
+                        <FormSection title="ইন্সট্রাক্টর তথ্য" icon={<User className="mr-3 h-6 w-6 text-[#ea670c]"/>}>
                             <InputField name="instructorName" value={formData.instructorName} onChange={handleChange} label="ইন্সট্রাক্টরের নাম" disabled />
                             <TextareaField name="instructorBio" value={formData.instructorBio} onChange={handleChange} label="ইন্সট্রাক্টরের পরিচিতি" disabled />
                         </FormSection>
 
-                        <FormSection title="আউটকাম ও রিকোয়ারমেন্ট" icon={<Target className="mr-3 h-6 w-6 text-indigo-600"/>}>
+                        <FormSection title="আউটকাম ও রিকোয়ারমেন্ট" icon={<Target className="mr-3 h-6 w-6 text-[#ea670c]"/>}>
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-2">এই কোর্স থেকে কি শিখবেন?</label>
                                 {formData.outcomes.map((o, i) => <div key={i} className="flex gap-2 mb-2"><input type="text" value={o} onChange={(e) => handleListChange('outcomes', i, e.target.value)} className="w-full p-2 border rounded-md" placeholder={`Outcome #${i + 1}`} /><button type="button" onClick={() => removeListItem('outcomes', i)} className="p-2 text-red-500 hover:bg-red-100 rounded-md"><Trash2 size={16}/></button></div>)}
-                                <button type="button" onClick={() => addListItem('outcomes')} className="text-sm font-semibold text-indigo-600 hover:text-indigo-800"><Plus size={16} className="inline mr-1"/> আউটকাম যোগ করুন</button>
+                                <button type="button" onClick={() => addListItem('outcomes')} className="text-sm font-semibold text-[#ea670c] hover:text-indigo-800"><Plus size={16} className="inline mr-1"/> আউটকাম যোগ করুন</button>
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-2">কোর্সের প্রয়োজনীয়তা</label>
                                 {formData.requirements.map((r, i) => <div key={i} className="flex gap-2 mb-2"><input type="text" value={r} onChange={(e) => handleListChange('requirements', i, e.target.value)} className="w-full p-2 border rounded-md" placeholder={`Requirement #${i + 1}`} /><button type="button" onClick={() => removeListItem('requirements', i)} className="p-2 text-red-500 hover:bg-red-100 rounded-md"><Trash2 size={16}/></button></div>)}
-                                <button type="button" onClick={() => addListItem('requirements')} className="text-sm font-semibold text-indigo-600 hover:text-indigo-800"><Plus size={16} className="inline mr-1"/> রিকোয়ারমেন্ট যোগ করুন</button>
+                                <button type="button" onClick={() => addListItem('requirements')} className="text-sm font-semibold text-[#ea670c] hover:text-indigo-800"><Plus size={16} className="inline mr-1"/> রিকোয়ারমেন্ট যোগ করুন</button>
                             </div>
                         </FormSection>
 
-                        <FormSection title="কোর্স সিলেবাস" icon={<ListChecks className="mr-3 h-6 w-6 text-indigo-600"/>}>
+                        <FormSection title="কোর্স সিলেবাস" icon={<ListChecks className="mr-3 h-6 w-6 text-[#ea670c]"/>}>
                             <div className="space-y-6">
                                 {syllabus.map((s, si) => (
                                     <div key={s.id} className="border bg-slate-50 p-4 rounded-lg">
@@ -316,8 +316,8 @@ export default function ManageCoursePage() {
                                                     <div className="mt-3 pl-10">
                                                         <div className="flex items-center gap-2 mb-2">
                                                             <span className="text-xs font-medium text-slate-600">Video Source:</span>
-                                                            <button type="button" onClick={() => handleLessonChange(s.id, l.id, 'videoSource', 'upload')} className={`px-2 py-1 text-xs rounded ${l.videoSource === 'upload' ? 'bg-indigo-600 text-white' : 'bg-slate-200 text-slate-800'}`}>Upload</button>
-                                                            <button type="button" onClick={() => handleLessonChange(s.id, l.id, 'videoSource', 'link')} className={`px-2 py-1 text-xs rounded ${l.videoSource === 'link' ? 'bg-indigo-600 text-white' : 'bg-slate-200 text-slate-800'}`}>Link</button>
+                                                            <button type="button" onClick={() => handleLessonChange(s.id, l.id, 'videoSource', 'upload')} className={`px-2 py-1 text-xs rounded ${l.videoSource === 'upload' ? 'bg-[#ea670c] text-white' : 'bg-slate-200 text-slate-800'}`}>Upload</button>
+                                                            <button type="button" onClick={() => handleLessonChange(s.id, l.id, 'videoSource', 'link')} className={`px-2 py-1 text-xs rounded ${l.videoSource === 'link' ? 'bg-[#ea670c] text-white' : 'bg-slate-200 text-slate-800'}`}>Link</button>
                                                         </div>
                                                         {l.videoSource === 'upload' ? 
                                                             <input type="file" accept="video/*" onChange={(e) => handleLessonChange(s.id, l.id, 'videoFile', e.target.files[0])} /> 
@@ -327,37 +327,37 @@ export default function ManageCoursePage() {
                                                     </div>
                                                 </div>
                                             ))}
-                                            <button type="button" onClick={() => addLesson(s.id)} className="text-sm font-semibold text-indigo-600 hover:text-indigo-800 ml-10"><Plus size={16} className="inline mr-1"/> Add Lesson</button>
+                                            <button type="button" onClick={() => addLesson(s.id)} className="text-sm font-semibold text-[#ea670c] hover:text-indigo-800 ml-10"><Plus size={16} className="inline mr-1"/> Add Lesson</button>
                                         </div>
                                     </div>
                                 ))}
-                                <button type="button" onClick={addSection} className="w-full text-center py-3 border-2 border-dashed rounded-lg text-indigo-600 font-semibold hover:bg-indigo-50 transition">Add Section</button>
+                                <button type="button" onClick={addSection} className="w-full text-center py-3 border-2 border-dashed rounded-lg text-[#ea670c] font-semibold hover:bg-indigo-50 transition">Add Section</button>
                             </div>
                         </FormSection>
                     </div>
 
                     <div className="lg:col-span-1">
                         <div className="sticky top-24 space-y-8">
-                            <FormSection title="কোর্স মেটাডেটা" icon={<Tag className="mr-3 h-6 w-6 text-indigo-600"/>}>
+                            <FormSection title="কোর্স মেটাডেটা" icon={<Tag className="mr-3 h-6 w-6 text-[#ea670c]"/>}>
                                 <SelectField label="ক্যাটাগরি" name="category" value={formData.category} onChange={handleChange}><option value="">Select Category</option><option value="web-development">Web Development</option></SelectField>
                                 <SelectField label="ভাষা" name="language" value={formData.language} onChange={handleChange}><option value="বাংলা">বাংলা</option><option value="English">English</option></SelectField>
                                 <InputField label="কোর্সের সময়কাল" name="duration" value={formData.duration} onChange={handleChange} placeholder="e.g., 12 hours 30 minutes"/>
                                 <InputField label="মোট লেসন সংখ্যা" name="numberOfLessons" type="number" value={formData.numberOfLessons} onChange={handleChange} placeholder="e.g., 75"/>
                             </FormSection>
-                            <FormSection title="মূল্য নির্ধারণ" icon={<DollarSign className="mr-3 h-6 w-6 text-indigo-600"/>}>
+                            <FormSection title="মূল্য নির্ধারণ" icon={<DollarSign className="mr-3 h-6 w-6 text-[#ea670c]"/>}>
                                 <div className="flex items-center space-x-2 p-3 bg-slate-100 rounded-md">
-                                    <input type="checkbox" id="isFree" checked={formData.isFree} onChange={handleFreeCourseToggle} className="h-4 w-4 rounded text-indigo-600 focus:ring-indigo-500"/>
+                                    <input type="checkbox" id="isFree" checked={formData.isFree} onChange={handleFreeCourseToggle} className="h-4 w-4 rounded text-[#ea670c] focus:ring-indigo-500"/>
                                     <label htmlFor="isFree" className="text-sm font-medium text-slate-800">This is a free course</label>
                                 </div>
                                 {!formData.isFree && <InputField label="মূল্য (BDT)" name="price" type="number" value={formData.price} onChange={handleChange} placeholder="e.g., 1500" />}
                             </FormSection>
-                            <FormSection title="কোর্স মিডিয়া" icon={<ImageIcon className="mr-3 h-6 w-6 text-indigo-600"/>}>
+                            <FormSection title="কোর্স মিডিয়া" icon={<ImageIcon className="mr-3 h-6 w-6 text-[#ea670c]"/>}>
                                 <FileUploadField label="কোর্স থাম্বনেইল" onFileSelect={handleThumbnailChange} preview={thumbnailPreview} Icon={ImageIcon} acceptedFiles="image/*" fileInfo={thumbnail} />
                                 <hr className="my-4"/>
                                 <FileUploadField label="ইন্ট্রো ভিডিও" onFileSelect={handleIntroVideoChange} fileInfo={introVideo} Icon={Film} acceptedFiles="video/*" />
                             </FormSection>
                             <FormSection title="পাবলিশ" icon={<CheckCircle className="mr-3 h-6 w-6 text-green-600"/>}>
-                                 <button type="submit" disabled={isLoading} className="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700 flex items-center justify-center disabled:bg-indigo-400 disabled:cursor-not-allowed">
+                                 <button type="submit" disabled={isLoading} className="w-full bg-[#ea670c] text-white font-bold py-3 px-4 rounded-md hover:bg-[#c2570c] flex items-center justify-center disabled:bg-[#fb8a3c] disabled:cursor-not-allowed">
                                      {isLoading ? <Loader2 className="animate-spin h-5 w-5" /> : (isEditMode ? 'কোর্স আপডেট করুন' : 'কোর্স পাবলিশ করুন')}
                                  </button>
                                 <button type="button" className="w-full mt-2 bg-slate-200 text-slate-800 font-bold py-2.5 px-4 rounded-md hover:bg-slate-300">Save as Draft</button>

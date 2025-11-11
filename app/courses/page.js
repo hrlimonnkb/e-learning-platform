@@ -68,34 +68,34 @@ export default function AllCoursesPage() {
                         <ul className="space-y-4">
                             {/* Example Categories - make these dynamic later */}
                             <li>
-                                <a href="#" className="flex justify-between items-center text-slate-700 hover:text-indigo-600 font-medium">
+                                <a href="#" className="flex justify-between items-center text-slate-700 hover:text-[#ea670c] font-medium">
                                     <span>ডিজাইন</span>
                                     <ChevronDown size={16} className="text-slate-400" />
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="flex justify-between items-center text-slate-700 hover:text-indigo-600 font-medium">
+                                <a href="#" className="flex justify-between items-center text-slate-700 hover:text-[#ea670c] font-medium">
                                     <span>ওয়েব ডেভেলপমেন্ট</span>
                                     <ChevronDown size={16} className="text-slate-400" />
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="flex justify-between items-center text-indigo-600 hover:text-indigo-700 font-bold">
+                                <a href="#" className="flex justify-between items-center text-[#ea670c] hover:text-[#c2570c] font-bold">
                                     <span>ডিজিটাল মার্কেটিং (80)</span>
-                                    <ChevronDown size={16} className="text-indigo-600" />
+                                    <ChevronDown size={16} className="text-[#ea670c]" />
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className="block text-slate-700 hover:text-indigo-600">ডাটা অ্যানালাইসিস</a>
+                                <a href="#" className="block text-slate-700 hover:text-[#ea670c]">ডাটা অ্যানালাইসিস</a>
                             </li>
                             <li>
-                                <a href="#" className="block text-slate-700 hover:text-indigo-600">বিজনেস</a>
+                                <a href="#" className="block text-slate-700 hover:text-[#ea670c]">বিজনেস</a>
                             </li>
                             <li>
-                                <a href="#" className="block text-slate-700 hover:text-indigo-600">প্রোডাক্ট ডেভেলপমেন্ট</a>
+                                <a href="#" className="block text-slate-700 hover:text-[#ea670c]">প্রোডাক্ট ডেভেলপমেন্ট</a>
                             </li>
                             <li>
-                                <a href="#" className="block text-slate-700 hover:text-indigo-600">মেটা অ্যাডস মাস্টারি</a>
+                                <a href="#" className="block text-slate-700 hover:text-[#ea670c]">মেটা অ্যাডস মাস্টারি</a>
                             </li>
                         </ul>
                     </aside>
@@ -160,7 +160,7 @@ export default function AllCoursesPage() {
                                             </p>
 
                                             <Link href={`/courses/${course.slug}`} passHref>
-                                                <span className="w-full inline-flex items-center justify-center px-4 py-2 bg-[#f97316] text-white font-semibold rounded-md hover:bg-emerald-700 transition-colors duration-200 text-center">
+                                                <span className="w-full inline-flex items-center justify-center px-4 py-2 bg-[#f97316] text-white font-semibold rounded-md hover:bg-[#c2570c] transition-colors duration-200 text-center">
                                                     কোর্সটি দেখুন
                                                     <ArrowRight size={18} className="ml-2" />
                                                 </span>

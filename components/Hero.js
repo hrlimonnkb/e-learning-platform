@@ -96,7 +96,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-2">
               <Link
                 href="/start"
-                className="px-6 sm:px-8 py-3 bg-[#f97316] text-white text-sm sm:text-base font-semibold rounded-lg shadow-md transition-all duration-300 hover:bg-emerald-700 hover:shadow-lg"
+                className="px-6 sm:px-8 py-3 bg-[#f97316] text-white text-sm sm:text-base font-semibold rounded-lg shadow-md transition-all duration-300 hover:bg-[#c2570c] hover:shadow-lg"
               >
                শুরু করো
               </Link>

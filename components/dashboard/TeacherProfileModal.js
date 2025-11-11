@@ -64,7 +64,7 @@ const FileDetail = ({ icon, label, items }) => {
                          const fileName = url.split('/').pop();
 
                          return (
-                            <a key={index} href={fullUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-indigo-600 hover:underline">
+                            <a key={index} href={fullUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#ea670c] hover:underline">
                                 {isImage ? (
                                     <img src={fullUrl} alt={`${label} ${index + 1}`} className="h-10 w-10 rounded-md object-cover border border-slate-200" />
                                 ) : (
@@ -115,7 +115,7 @@ export default function TeacherProfileModal({ teacher, onClose }) {
                     <div className="space-y-6">
                         {/* Personal & Professional Section */}
                         <div>
-                            <h4 className="text-lg font-bold text-indigo-700 border-b pb-2 mb-3">Professional & Personal Details</h4>
+                            <h4 className="text-lg font-bold text-[#c2570c] border-b pb-2 mb-3">Professional & Personal Details</h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6">
                                 <ProfileDetail icon={<Mail size={16} />} label="Email" value={teacher.email} />
                                 <ProfileDetail icon={<Smartphone size={16} />} label="Mobile" value={teacher.mobileNumber || 'N/A'} />
@@ -126,7 +126,7 @@ export default function TeacherProfileModal({ teacher, onClose }) {
                                      <ProfileDetail icon={<LinkIcon size={16} />} label="Social Links">
                                         <div className="flex flex-col space-y-1 mt-1">
                                             {teacher.socialLinks?.map((link, i) => (
-                                                link && <a key={i} href={link} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline break-all">{link}</a>
+                                                link && <a key={i} href={link} target="_blank" rel="noopener noreferrer" className="text-[#ea670c] hover:underline break-all">{link}</a>
                                             ))}
                                         </div>
                                     </ProfileDetail>
@@ -136,7 +136,7 @@ export default function TeacherProfileModal({ teacher, onClose }) {
 
                         {/* Detailed Bio (Full width) */}
                         <div>
-                             <h4 className="text-lg font-bold text-indigo-700 border-b pb-2 mb-3">Detailed Biography</h4>
+                             <h4 className="text-lg font-bold text-[#c2570c] border-b pb-2 mb-3">Detailed Biography</h4>
                              <div className="bg-white p-4 rounded-md border text-slate-600 whitespace-pre-wrap">
                                 {teacher.detailedBio || 'No detailed biography provided.'}
                              </div>
@@ -144,7 +144,7 @@ export default function TeacherProfileModal({ teacher, onClose }) {
 
                         {/* Teaching Details Section */}
                         <div>
-                            <h4 className="text-lg font-bold text-indigo-700 border-b pb-2 mb-3">Teaching Details</h4>
+                            <h4 className="text-lg font-bold text-[#c2570c] border-b pb-2 mb-3">Teaching Details</h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6">
                                 <ProfileDetail icon={<BookOpen size={16} />} label="Subjects" value={teacher.subjects} />
                                 <ProfileDetail icon={<Languages size={16} />} label="Preferred Language" value={teacher.preferredLanguage} />
@@ -156,7 +156,7 @@ export default function TeacherProfileModal({ teacher, onClose }) {
                         
                         {/* Certifications are now handled by FileDetail */}
                         <div>
-                            <h4 className="text-lg font-bold text-indigo-700 border-b pb-2 mb-3">Certifications & Verification</h4>
+                            <h4 className="text-lg font-bold text-[#c2570c] border-b pb-2 mb-3">Certifications & Verification</h4>
                              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6">
                                 {/* --- New Certification Display --- */}
                                 <div className="md:col-span-2">
@@ -171,7 +171,7 @@ export default function TeacherProfileModal({ teacher, onClose }) {
 
                         {/* Payment Section */}
                         <div>
-                            <h4 className="text-lg font-bold text-indigo-700 border-b pb-2 mb-3">Payment Information</h4>
+                            <h4 className="text-lg font-bold text-[#c2570c] border-b pb-2 mb-3">Payment Information</h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6">
                                 <ProfileDetail icon={<Banknote size={16} />} label="Bank Name" value={teacher.bankName || 'N/A'}/>
                                 <ProfileDetail icon={<Banknote size={16} />} label="bankSection" value={teacher.bankSection || 'N/A'}/>

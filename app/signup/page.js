@@ -84,7 +84,7 @@ const SignupPage = () => {
         <div style={{ backgroundColor: '#F9FAFB' }} className="min-h-screen flex items-center justify-center p-4">
             <div className="w-full max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
                 {/* Left Column */}
-                <div style={{ backgroundColor: '#4F46E5' }} className="w-full md:w-2/5 text-white p-8 md:p-12 flex flex-col justify-center">
+                <div style={{ backgroundColor: '#fb8a3c' }} className="w-full md:w-2/5 text-white p-8 md:p-12 flex flex-col justify-center">
                     <h1 className="text-3xl font-bold mb-4">ই-লার্ণ</h1>
                     <p className="mb-8" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
                         জ্ঞান অর্জন করুন, সহজে শিখুন, একসাথে এগিয়ে যান।
@@ -181,8 +181,8 @@ const SignupPage = () => {
                         <button 
                             type="submit" 
                             disabled={loading}
-                            className="w-full text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center disabled:bg-indigo-400"
-                            style={{ backgroundColor: '#4F46E5', color: '#FFFFFF' }}
+                            className="w-full text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center disabled:bg-[#fb8a3c]"
+                            style={{ backgroundColor: '#fb8a3c', color: '#FFFFFF' }}
                         >
                             {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : 'সাইন আপ করুন'}
                         </button>
@@ -190,7 +190,7 @@ const SignupPage = () => {
 
                     <p style={{ color: '#6B7280' }} className="text-center text-sm mt-6">
                         ইতিমধ্যে অ্যাকাউন্ট আছে?{' '}
-                        <a href="/signin" style={{ color: '#4F46E5' }} className="font-semibold hover:underline">
+                        <a href="/signin" style={{ color: '#fb8a3c' }} className="font-semibold hover:underline">
                             লগইন করুন
                         </a>
                     </p>

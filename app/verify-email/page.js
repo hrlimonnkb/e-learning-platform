@@ -104,7 +104,7 @@ const VerifyEmailContent = () => {
         <div className="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-4">
             <div className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8 text-center">
                 <div className="inline-block bg-indigo-100 p-3 sm:p-4 rounded-full mb-4">
-                    <MailCheck className="h-8 w-8 sm:h-10 sm:w-10 text-indigo-600" />
+                    <MailCheck className="h-8 w-8 sm:h-10 sm:w-10 text-[#ea670c]" />
                 </div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">আপনার ইমেইল যাচাই করুন</h1>
                 <p className="text-gray-600 mb-6 px-4">
@@ -136,7 +136,7 @@ const VerifyEmailContent = () => {
                     <button
                         type="submit"
                         disabled={loading || success}
-                        className="w-full text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 disabled:cursor-not-allowed"
+                        className="w-full text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center bg-[#ea670c] hover:bg-[#c2570c] disabled:bg-[#fb8a3c] disabled:cursor-not-allowed"
                     >
                         {loading ? <Loader2 className="h-6 w-6 animate-spin" /> : 'অ্যাকাউন্ট যাচাই করুন'}
                     </button>
@@ -147,7 +147,7 @@ const VerifyEmailContent = () => {
                     <button 
                         onClick={handleResendCode}
                         disabled={countdown > 0 || resending || success}
-                        className="font-semibold text-indigo-600 hover:underline disabled:text-gray-400 disabled:cursor-not-allowed transition"
+                        className="font-semibold text-[#ea670c] hover:underline disabled:text-gray-400 disabled:cursor-not-allowed transition"
                     >
                         {resending ? 'পাঠানো হচ্ছে...' : (countdown > 0 ? `${countdown} সেকেন্ড পরে আবার পাঠান` : 'আবার পাঠান')}
                     </button>

@@ -63,7 +63,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
                     href={link.href}
                     className={`flex items-center p-3 my-1 rounded-lg transition-colors ${
                         isActive
-                            ? 'bg-indigo-600 text-white shadow-lg'
+                            ? 'bg-[#ea670c] text-white shadow-lg'
                             : 'text-gray-300 hover:bg-indigo-900 hover:text-white'
                     }`}
                     onClick={() => setIsSidebarOpen(false)}
@@ -137,7 +137,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
                 {/* Logo and Close Button */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-700 h-20">
                     <Link href="/" className="flex items-center space-x-2">
-                        <ShoppingBag className="text-indigo-400" size={32} />
+                        <ShoppingBag className="text-[#fb8a3c]" size={32} />
                         <span className="font-bold text-2xl text-white">ই-লার্ণ</span>
                     </Link>
                     <button className="md:hidden text-gray-400 hover:text-white" onClick={() => setIsSidebarOpen(false)}>

@@ -47,7 +47,7 @@ export default function ForgotPasswordPage() {
                         />
                     </div>
                     {message && <p className="text-center text-sm text-green-600">{message}</p>}
-                    <button type="submit" disabled={loading} className="w-full text-white bg-indigo-600 hover:bg-indigo-700 font-semibold py-3 rounded-lg flex justify-center items-center disabled:bg-indigo-400">
+                    <button type="submit" disabled={loading} className="w-full text-white bg-[#ea670c] hover:bg-[#c2570c] font-semibold py-3 rounded-lg flex justify-center items-center disabled:bg-[#fb8a3c]">
                         {loading ? <Loader2 className="animate-spin" /> : 'রিসেট কোড পাঠান'}
                     </button>
                 </form>

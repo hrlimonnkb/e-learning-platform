@@ -75,7 +75,7 @@ const Topbar = ({ setIsSidebarOpen }) => {
 
             {/* Right Side */}
             <div className="flex items-center gap-4">
-                <button className="text-gray-600 hover:text-indigo-600 relative">
+                <button className="text-gray-600 hover:text-[#ea670c] relative">
                     <Bell size={24} />
                     <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
                 </button>

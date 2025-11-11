@@ -88,7 +88,7 @@ export default function AllCoursesPage() {
                     </p>
                 </div>
                 <Link href="/dashboard/courses/add" passHref>
-                   <span className="bg-indigo-600 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700">Add New Course</span>
+                   <span className="bg-[#ea670c] text-white font-bold py-2 px-4 rounded-md hover:bg-[#c2570c]">Add New Course</span>
                 </Link>
             </div>
             <div className="bg-white shadow-md rounded-lg overflow-hidden">
@@ -124,7 +124,7 @@ export default function AllCoursesPage() {
                                     <td className="px-6 py-4 whitespace-nowrap text-center">
                                         <div className="flex items-center justify-center space-x-2">
                                             <Link href={`/courses/${course.slug}`} passHref>
-                                                <span className="p-2 text-gray-500 hover:text-indigo-600 rounded-full" title="View Course"><Eye size={18} /></span>
+                                                <span className="p-2 text-gray-500 hover:text-[#ea670c] rounded-full" title="View Course"><Eye size={18} /></span>
                                             </Link>
                                             {(user?.role.toUpperCase() === 'TEACHER' || user?.id === course.instructor.userId) && (
                                                 <>

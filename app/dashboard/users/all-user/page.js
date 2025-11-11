@@ -86,7 +86,7 @@ const EditUserModal = ({ isOpen, onClose, user, onSave }) => {
                         <div><label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">Username</label><input type="text" name="username" id="username" value={formData.username} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500" /></div>
                         <div><label htmlFor="mobileNumber" className="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label><input type="text" name="mobileNumber" id="mobileNumber" value={formData.mobileNumber} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500" /></div>
                     </div>
-                    <div className="p-6 bg-gray-50 rounded-b-lg flex justify-end space-x-3"><button type="button" onClick={onClose} className="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50">Cancel</button><button type="submit" disabled={isSaving} className="px-4 py-2 bg-indigo-600 border border-transparent rounded-lg text-sm font-semibold text-white hover:bg-indigo-700 disabled:bg-indigo-400 flex items-center">{isSaving ? <Loader2 className="animate-spin mr-2" size={16} /> : <Save className="mr-2" size={16} />}Save Changes</button></div>
+                    <div className="p-6 bg-gray-50 rounded-b-lg flex justify-end space-x-3"><button type="button" onClick={onClose} className="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50">Cancel</button><button type="submit" disabled={isSaving} className="px-4 py-2 bg-[#ea670c] border border-transparent rounded-lg text-sm font-semibold text-white hover:bg-[#c2570c] disabled:bg-[#fb8a3c] flex items-center">{isSaving ? <Loader2 className="animate-spin mr-2" size={16} /> : <Save className="mr-2" size={16} />}Save Changes</button></div>
                 </form>
             </div>
         </div>
@@ -145,7 +145,7 @@ const CreateUserModal = ({ isOpen, onClose, onCreate }) => {
                         <div><label className="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label><input type="text" name="mobileNumber" value={formData.mobileNumber} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500" /></div>
                         <div><label className="block text-sm font-medium text-gray-700 mb-1">Role</label><select name="role" value={formData.role} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"><option value="STUDENT">Student</option><option value="TEACHER">Teacher</option><option value="ADMIN">Admin</option></select></div>
                     </div>
-                    <div className="p-6 bg-gray-50 rounded-b-lg flex justify-end space-x-3"><button type="button" onClick={onClose} className="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50">Cancel</button><button type="submit" disabled={isSaving} className="px-4 py-2 bg-indigo-600 border border-transparent rounded-lg text-sm font-semibold text-white hover:bg-indigo-700 disabled:bg-indigo-400 flex items-center">{isSaving ? <Loader2 className="animate-spin mr-2" size={16} /> : <PlusCircle className="mr-2" size={16} />}Create User</button></div>
+                    <div className="p-6 bg-gray-50 rounded-b-lg flex justify-end space-x-3"><button type="button" onClick={onClose} className="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50">Cancel</button><button type="submit" disabled={isSaving} className="px-4 py-2 bg-[#ea670c] border border-transparent rounded-lg text-sm font-semibold text-white hover:bg-[#c2570c] disabled:bg-[#fb8a3c] flex items-center">{isSaving ? <Loader2 className="animate-spin mr-2" size={16} /> : <PlusCircle className="mr-2" size={16} />}Create User</button></div>
                 </form>
             </div>
         </div>
@@ -249,7 +249,7 @@ export default function UserManagementTable() {
                     <div><h1 className="text-2xl font-bold text-gray-800">User Management</h1><p className="text-sm text-gray-500 mt-1">View, edit, and manage system users.</p></div>
                     <div className='flex items-center gap-4'>
                         <div className="flex items-center bg-gray-100 text-gray-600 font-semibold px-4 py-2 rounded-lg"><Users className="h-5 w-5 mr-2" /><span>{users.length} Total Users</span></div>
-                        <button onClick={handleOpenCreateModal} className="flex items-center justify-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"><PlusCircle size={18} className="mr-2" />Create User</button>
+                        <button onClick={handleOpenCreateModal} className="flex items-center justify-center px-4 py-2 bg-[#ea670c] text-white font-semibold rounded-lg hover:bg-[#c2570c] transition-colors"><PlusCircle size={18} className="mr-2" />Create User</button>
                     </div>
                 </div>
                 {loading ? <TableSkeleton /> : (users.length === 0 ? <div className="flex flex-col items-center justify-center p-16 text-center"><UserX className="h-20 w-20 text-gray-300 mb-4" /><h3 className="text-lg font-semibold text-gray-700">No Users Found</h3><p className="text-sm text-gray-500">The user list is currently empty.</p></div> : 
@@ -287,7 +287,7 @@ export default function UserManagementTable() {
                                     <td className="px-6 py-4 whitespace-nowrap text-center">
                                         {u.email !== DEFAULT_ADMIN_EMAIL && (
                                             <div className="flex items-center justify-center space-x-2">
-                                                <button onClick={() => handleOpenEditModal(u)} className="p-2 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-full transition-colors" title="Edit User"><Pencil size={18} /></button>
+                                                <button onClick={() => handleOpenEditModal(u)} className="p-2 text-gray-500 hover:text-[#ea670c] hover:bg-indigo-50 rounded-full transition-colors" title="Edit User"><Pencil size={18} /></button>
                                                 <button onClick={() => handleDeleteUser(u.id, u.username)} disabled={updatingId === u.id} className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-full disabled:text-gray-300 transition-colors" title="Delete User"><Trash2 size={18} /></button>
                                             </div>
                                         )}

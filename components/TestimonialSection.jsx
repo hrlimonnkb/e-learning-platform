@@ -5,13 +5,12 @@ import Image from 'next/image';
 
 // Swiper-এর কম্পোনেন্ট এবং মডিউল Import করুন
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules'; 
 
 // Swiper-এর CSS Import করুন
 import 'swiper/css';
-import 'swiper/css/pagination';
 
-// --- ডেমো ডেটা (বাংলায় অনুবাদিত) ---
+// --- ডেমো ডেটা (অপরিবর্তিত) ---
 const testimonialsData = [
   {
     id: 1,
@@ -24,7 +23,7 @@ const testimonialsData = [
   {
     id: 2,
     logoSrc: "/logo.png",
-    quote: "Weekend UX আমার ক্যারিয়ার পরিবর্তন করেছে। প্রশিক্ষকরা অসাধারণ এবং কনটেন্টটি অত্যন্ত প্রাসঙ্গিক।",
+    quote: "Micro Skill আমার ক্যারিয়ার পরিবর্তন করেছে। প্রশিক্ষকরা অসাধারণ এবং কনটেন্টটি অত্যন্ত প্রাসঙ্গিক।",
     avatarSrc: "/assets/Image(5).png",
     name: "জেন স্মিথ",
     title: "প্রোডাক্ট ডিজাইনার, টেক কর্প",
@@ -32,10 +31,50 @@ const testimonialsData = [
   {
     id: 3,
     logoSrc: "/logo.png",
-    quote: "একটি সত্যিকারের আকর্ষণীয় শেখার পরিবেশ। যারা ডিজাইনে সিরিয়াস, তাদের জন্য Weekend UX অত্যন্ত সুপারিশযোগ্য।",
+    quote: "একটি সত্যিকারের আকর্ষণীয় শেখার পরিবেশ। যারা ডিজাইনে সিরিয়াস, তাদের জন্য Micro Skill অত্যন্ত সুপারিশযোগ্য।",
     avatarSrc: "/assets/Image(6).png",
-    name: "এমিলি হোয়াইট",
+    name: "এমিলি হোয়াইট",
     title: "UX রিসার্চার, গ্লোবাল ইনোভেশন্স",
+  },
+  {
+    id: 4,
+    logoSrc: "/logo.png",
+    quote: "প্রশিক্ষকরা অসাধারণ এবং কনটেন্টটি অত্যন্ত প্রাসঙ্গিক।",
+    avatarSrc: "/assets/Image(4).png",
+    name: "আরিফ হোসেন",
+    title: "ফ্রিল্যান্স ডিজাইনার",
+  },
+   {
+    id: 5,
+    logoSrc: "/logo.png",
+    quote: "এই কোর্সটি অসাধারণ! যারা নতুন ক্যারিয়ার শুরু করতে চান বা পুরনো জ্ঞান ঝালিয়ে নিতে চান তাদের জন্য এটি একটি দারুণ প্ল্যাটফর্ম।",
+    avatarSrc: "/assets/Image(4).png",
+    name: "জ্যাকব জোন্স",
+    title: "শিক্ষার্থী, ন্যাশনাল ইউনিভার্সিটি",
+  },
+  {
+    id: 6,
+    logoSrc: "/logo.png",
+    quote: "Micro Skill আমার ক্যারিয়ার পরিবর্তন করেছে। প্রশিক্ষকরা অসাধারণ এবং কনটেন্টটি অত্যন্ত প্রাসঙ্গিক।",
+    avatarSrc: "/assets/Image(5).png",
+    name: "জেন স্মিথ",
+    title: "প্রোডাক্ট ডিজাইনার, টেক কর্প",
+  },
+  {
+    id: 7,
+    logoSrc: "/logo.png",
+    quote: "একটি সত্যিকারের আকর্ষণীয় শেখার পরিবেশ। যারা ডিজাইনে সিরিয়াস, তাদের জন্য Micro Skill অত্যন্ত সুপারিশযোগ্য।",
+    avatarSrc: "/assets/Image(6).png",
+    name: "এমিলি হোয়াইট",
+    title: "UX রিসার্চার, গ্লোবাল ইনোভেশন্স",
+  },
+  {
+    id: 8,
+    logoSrc: "/logo.png",
+    quote: "প্রশিক্ষকরা অসাধারণ এবং কনটেন্টটি অত্যন্ত প্রাসঙ্গিক।",
+    avatarSrc: "/assets/Image(4).png",
+    name: "আরিফ হোসেন",
+    title: "ফ্রিল্যান্স ডিজাইনার",
   },
 ];
 
@@ -44,41 +83,53 @@ const testimonialsData = [
  */
 const TestimonialSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-teal-50">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-orange-100 to-orange-200 overflow-hidden">
+      
+      {/* --- কাস্টম CSS --- */}
+      <style jsx global>{`
+        .testimonial-swiper .swiper-wrapper {
+          transition-timing-function: linear !important;
+        }
+      `}</style>
+      {/* --- কাস্টম CSS শেষ --- */}
+
+      <div> 
         
-        {/* Swiper Slider */}
+        {/* Swiper Slider (আপডেটেড) */}
         <Swiper
-          modules={[Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
+          modules={[Autoplay]} 
+          className="testimonial-swiper" 
           loop={true}
+          spaceBetween={30}
+          slidesPerView={'auto'} 
+          speed={8000} // <-- স্পিড ঠিক রাখুন
           autoplay={{
-            delay: 5000,
+            delay: 0, // <-- 0ms delay
             disableOnInteraction: false,
+            // --- পরিবর্তন ---
+            // pauseOnMouseEnter: true, <-- এই লাইনটি মুছে ফেলা হয়েছে
+            // --- পরিবর্তন শেষ ---
           }}
-          pagination={{
-            el: '.swiper-pagination-testimonial',
-            clickable: true,
-          }}
-          className="pb-16!"
         >
           {testimonialsData.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <div className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 text-center max-w-4xl mx-auto shadow-lg">
+            <SwiperSlide 
+              key={testimonial.id} 
+              className="!w-[380px] h-auto p-4" 
+            >
+              <div className="bg-white rounded-3xl p-8 text-center shadow-lg h-full flex flex-col">
                 
                 {/* Logo */}
                 <Image
                   src={testimonial.logoSrc}
-                  alt="Weekend UX Logo"
+                  alt="Micro Skill Logo"
                   width={100}
                   height={30}
                   className="mx-auto h-8 w-auto mb-8"
                 />
 
                 {/* Quote */}
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight md:leading-snug mt-4">
-                  {testimonial.quote}
+                <h2 className="text-2xl font-bold text-gray-900 leading-tight mt-4 flex-grow">
+                  "{testimonial.quote}"
                 </h2>
 
                 {/* Avatar */}
@@ -101,11 +152,6 @@ const TestimonialSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        
-        {/* Custom Pagination Dots */}
-        <div className="swiper-pagination-testimonial flex justify-center items-center gap-2 mt-8">
-          {/* Swiper.js এখানে ডট বসাবে */}
-        </div>
         
       </div>
     </section>

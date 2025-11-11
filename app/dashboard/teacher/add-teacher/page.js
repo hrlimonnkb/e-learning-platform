@@ -49,9 +49,9 @@ const TagInput = ({ label, tags, setTags, placeholder }) => {
             <label className="block text-sm font-medium text-slate-700 mb-1.5">{label}</label>
             <div className="flex flex-wrap gap-2 p-2 border border-slate-300 rounded-md">
                 {tags.map((tag, index) => (
-                    <div key={index} className="flex items-center gap-1 bg-indigo-100 text-indigo-700 text-sm font-medium px-2 py-1 rounded-full">
+                    <div key={index} className="flex items-center gap-1 bg-indigo-100 text-[#c2570c] text-sm font-medium px-2 py-1 rounded-full">
                         <span>{tag}</span>
-                        <button type="button" onClick={() => removeTag(tag)} className="text-indigo-500 hover:text-indigo-700"><X size={14} /></button>
+                        <button type="button" onClick={() => removeTag(tag)} className="text-indigo-500 hover:text-[#c2570c]"><X size={14} /></button>
                     </div>
                 ))}
                 <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={handleKeyDown} placeholder={placeholder} className="flex-grow bg-transparent focus:outline-none text-slate-900 placeholder:text-slate-400" />
@@ -268,7 +268,7 @@ export default function TeacherRegistrationForm() {
     }
 
     if (!isAuthenticated) {
-        return <div className="flex flex-col justify-center items-center text-center bg-slate-50 h-screen"><ShieldCheck className="h-16 w-16 text-red-500 mb-4" /><h1 className="text-2xl font-bold text-slate-800">অ্যাক্সেস অনুমোদিত নয়</h1><p className="mt-2 text-slate-600">এই পেজটি দেখার জন্য আপনাকে প্রথমে লগইন করতে হবে।</p><button onClick={() => router.push('/signin')} className="mt-6 bg-indigo-600 text-white font-bold py-2 px-6 rounded-md hover:bg-indigo-700">লগইন করুন</button></div>;
+        return <div className="flex flex-col justify-center items-center text-center bg-slate-50 h-screen"><ShieldCheck className="h-16 w-16 text-red-500 mb-4" /><h1 className="text-2xl font-bold text-slate-800">অ্যাক্সেস অনুমোদিত নয়</h1><p className="mt-2 text-slate-600">এই পেজটি দেখার জন্য আপনাকে প্রথমে লগইন করতে হবে।</p><button onClick={() => router.push('/signin')} className="mt-6 bg-[#ea670c] text-white font-bold py-2 px-6 rounded-md hover:bg-[#c2570c]">লগইন করুন</button></div>;
     }
 
     return (
@@ -282,7 +282,7 @@ export default function TeacherRegistrationForm() {
                 <div className="space-y-8">
                     {editMode && <StatusDisplay status={profileStatus} reason={rejectionReason} />}
 
-                    <FormSection title="ব্যক্তিগত তথ্য" icon={<User className="mr-3 h-6 w-6 text-indigo-600" />}>
+                    <FormSection title="ব্যক্তিগত তথ্য" icon={<User className="mr-3 h-6 w-6 text-[#ea670c]" />}>
                          <InputField label="সম্পূর্ণ নাম" name="fullName" value={formData.fullName} onChange={handleChange} placeholder="আপনার পুরো নাম লিখুন" disabled={!editMode} />
                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <InputField label="মোবাইল নম্বর" name="mobileNumber" value={formData.mobileNumber} onChange={handleChange} placeholder="01xxxxxxxxx" required={false}  disabled={!editMode} />
@@ -291,7 +291,7 @@ export default function TeacherRegistrationForm() {
                          <FileUploadField label="প্রোফাইল ফটো" onFileSelect={(e) => handleFileChange(e, setProfilePhoto, setProfilePhotoPreview)} preview={profilePhotoPreview} fileInfo={profilePhoto} Icon={ImageIcon} acceptedFiles="image/*" />
                     </FormSection>
                     
-                    <FormSection title="পেশাগত প্রোফাইল" icon={<Briefcase className="mr-3 h-6 w-6 text-indigo-600" />}>
+                    <FormSection title="পেশাগত প্রোফাইল" icon={<Briefcase className="mr-3 h-6 w-6 text-[#ea670c]" />}>
                         <TextareaField label="সংক্ষিপ্ত পরিচিতি" name="shortBio" value={formData.shortBio} onChange={handleChange} placeholder="আপনার সম্পর্কে ১০০ শব্দের মধ্যে লিখুন..." />
                         <TextareaField label="বিস্তারিত পরিচিতি" name="detailedBio" value={formData.detailedBio} onChange={handleChange} placeholder="আপনার শিক্ষাগত যোগ্যতা, অভিজ্ঞতা ইত্যাদি বিস্তারিত লিখুন..." rows={5} />
                         <TagInput label="দক্ষতা (Skills)" tags={formData.skills} setTags={(newTags) => setFormData(p => ({...p, skills: newTags}))} placeholder="স্কিল লিখে Enter চাপুন..." />
@@ -305,7 +305,7 @@ export default function TeacherRegistrationForm() {
                                     <ul className="mt-2 divide-y divide-gray-200 border rounded-md">
                                         {existingCertificates.map((filePath, index) => (
                                             <li key={index} className="px-3 py-2 flex items-center justify-between text-sm">
-                                                <a href={`${API_BASE_URL}/${filePath}`} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline truncate">{filePath.split('/').pop()}</a>
+                                                <a href={`${API_BASE_URL}/${filePath}`} target="_blank" rel="noopener noreferrer" className="text-[#ea670c] hover:underline truncate">{filePath.split('/').pop()}</a>
                                                 <button type="button" onClick={() => removeExistingCertificate(filePath)} className="ml-4 text-red-500 hover:text-red-700"><X size={16}/></button>
                                             </li>
                                         ))}
@@ -317,7 +317,7 @@ export default function TeacherRegistrationForm() {
                                 <div className="space-y-1 text-center">
                                     <Award className="mx-auto h-12 w-12 text-gray-400" />
                                     <div className="flex text-sm text-gray-600">
-                                        <label htmlFor="certification-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                        <label htmlFor="certification-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-[#ea670c] hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                             <span>Upload new files</span>
                                             <input id="certification-upload" name="certifications" type="file" className="sr-only" onChange={handleMultipleFileChange} multiple accept="image/*,.pdf" />
                                         </label>
@@ -350,11 +350,11 @@ export default function TeacherRegistrationForm() {
                                     {formData.socialLinks.length > 1 && <button type="button" onClick={() => removeSocialLink(index)} className="p-2 text-red-500"><Trash2 size={16}/></button>}
                                 </div>
                             ))}
-                            <button type="button" onClick={addSocialLink} className="text-sm text-indigo-600 font-medium"><Plus size={16} className="inline mr-1"/> লিঙ্ক যোগ করুন</button>
+                            <button type="button" onClick={addSocialLink} className="text-sm text-[#ea670c] font-medium"><Plus size={16} className="inline mr-1"/> লিঙ্ক যোগ করুন</button>
                         </div>
                     </FormSection>
 
-                    <FormSection title="শিক্ষাদান সম্পর্কিত তথ্য" icon={<BookCopy className="mr-3 h-6 w-6 text-indigo-600" />}>
+                    <FormSection title="শিক্ষাদান সম্পর্কিত তথ্য" icon={<BookCopy className="mr-3 h-6 w-6 text-[#ea670c]" />}>
                         <TagInput label="যেসব বিষয় পড়াতে আগ্রহী" tags={formData.subjects} setTags={(newTags) => setFormData(p => ({...p, subjects: newTags}))} placeholder="বিষয় লিখে Enter চাপুন..." />
                         <TextareaField label="আপনার সময়সূচী (Availability)" name="availability" value={formData.availability} onChange={handleChange} placeholder="e.g., Sunday - Thursday, 8 PM - 10 PM" rows={2} helpText="শিক্ষার্থীরা কখন আপনার সাথে যোগাযোগ করতে পারবে তা উল্লেখ করুন।" />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -363,7 +363,7 @@ export default function TeacherRegistrationForm() {
                         </div>
                     </FormSection>
 
-                    <FormSection title="পেমেন্ট তথ্য" icon={<Banknote className="mr-3 h-6 w-6 text-indigo-600" />}>
+                    <FormSection title="পেমেন্ট তথ্য" icon={<Banknote className="mr-3 h-6 w-6 text-[#ea670c]" />}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <InputField label="ব্যাংকের নাম" name="bankName" value={formData.bankName} onChange={handleChange} placeholder="আপনার ব্যাংকের নাম" required={false} />
                             <InputField label="শাখার নাম" name="bankSection" value={formData.bankSection} onChange={handleChange} placeholder="শাখার নাম" required={false} />
@@ -372,11 +372,11 @@ export default function TeacherRegistrationForm() {
                     </FormSection>
                     
                     {!editMode && (
-                        <FormSection title="ভেরিফিকেশন ও চুক্তি" icon={<ShieldCheck className="mr-3 h-6 w-6 text-indigo-600" />}>
+                        <FormSection title="ভেরিফিকেশন ও চুক্তি" icon={<ShieldCheck className="mr-3 h-6 w-6 text-[#ea670c]" />}>
                              <FileUploadField label="পরিচয়পত্র ভেরিফিকেশন (NID/Passport)" onFileSelect={(e) => handleFileChange(e, setIdentityFile)} fileInfo={identityFile} Icon={FileText} acceptedFiles="image/*,.pdf" />
                              <div className="flex items-start">
-                                 <input id="terms" name="termsAccepted" type="checkbox" checked={formData.termsAccepted} onChange={handleChange} className="h-4 w-4 mt-0.5 rounded border-gray-300 text-indigo-600" />
-                                 <label htmlFor="terms" className="ml-2 block text-sm text-slate-900">আমি <a href="/terms" target="_blank" className="font-medium text-indigo-600 hover:underline">শর্তাবলী ও নীতিমালা</a> পড়েছি এবং সম্মত আছি।</label>
+                                 <input id="terms" name="termsAccepted" type="checkbox" checked={formData.termsAccepted} onChange={handleChange} className="h-4 w-4 mt-0.5 rounded border-gray-300 text-[#ea670c]" />
+                                 <label htmlFor="terms" className="ml-2 block text-sm text-slate-900">আমি <a href="/terms" target="_blank" className="font-medium text-[#ea670c] hover:underline">শর্তাবলী ও নীতিমালা</a> পড়েছি এবং সম্মত আছি।</label>
                              </div>
                         </FormSection>
                     )}
@@ -386,7 +386,7 @@ export default function TeacherRegistrationForm() {
                         {success && <p className="text-center text-sm text-green-600 bg-green-50 p-3 rounded-md">{success}</p>}
                     </div>
                     <div className="mt-8">
-                        <button type="submit" disabled={isLoading} className="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-transform hover:scale-105 flex items-center justify-center disabled:bg-indigo-400">
+                        <button type="submit" disabled={isLoading} className="w-full bg-[#ea670c] text-white font-bold py-3 px-4 rounded-md hover:bg-[#c2570c] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-transform hover:scale-105 flex items-center justify-center disabled:bg-[#fb8a3c]">
                             {isLoading ? (<><Loader2 className="mr-2 h-5 w-5 animate-spin" /> সাবমিট হচ্ছে...</>) : (editMode ? 'প্রোফাইল আপডেট করুন' : 'শিক্ষক হিসেবে রেজিস্টার করুন')}
                         </button>
                     </div>

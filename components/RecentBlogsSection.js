@@ -51,7 +51,7 @@ const BlogTag = ({ label, color }) => {
     pink: "bg-pink-100 text-pink-600",
     blue: "bg-blue-100 text-blue-600",
     orange: "bg-orange-100 text-orange-600",
-    indigo: "bg-indigo-100 text-indigo-600",
+    indigo: "bg-indigo-100 text-[#ea670c]",
   };
 
   return (

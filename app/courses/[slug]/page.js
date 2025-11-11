@@ -98,7 +98,7 @@ export default function CoursePage() {
         <div className="bg-slate-50 min-h-screen">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="text-sm text-slate-500 mb-4">
-                    <Link href="/courses" className="hover:text-indigo-600">কোর্সের বিবরণ</Link>
+                    <Link href="/courses" className="hover:text-[#ea670c]">কোর্সের বিবরণ</Link>
                     <span className="mx-2">/</span>
                     <span>{course.title}</span>
                 </div>
@@ -130,7 +130,7 @@ export default function CoursePage() {
 
                         {/* ... Other sections like About, Learning Objectives etc. ... */}
                         
-                        <FormSection title="কোর্স সিলেবাস" icon={<ListChecks className="mr-3 h-6 w-6 text-indigo-600"/>}>
+                        <FormSection title="কোর্স সিলেবাস" icon={<ListChecks className="mr-3 h-6 w-6 text-[#ea670c]"/>}>
                             {course.sections.map((section, sectionIndex) => (
                                 <div key={section.id} className="border-b border-slate-200 last:border-b-0">
                                     <button onClick={() => toggleSection(section.id)} className="w-full flex justify-between items-center py-4 text-left">

@@ -154,7 +154,7 @@ const SigninPage = () => {
                             {error && <p className="text-sm text-red-600 bg-red-50 p-3 rounded-lg text-center">{error}</p>}
 
                             <div className="flex items-center justify-end">
-                                <a href="/forgot-password" style={{ color: '#4F46E5' }} className="text-sm font-semibold hover:underline">
+                                <a href="/forgot-password" style={{ color: '#fb8a3c' }} className="text-sm font-semibold hover:underline">
                                     পাসওয়ার্ড ভুলে গেছেন?
                                 </a>
                             </div>
@@ -162,7 +162,7 @@ const SigninPage = () => {
                             <button 
                                 type="submit" 
                                 disabled={loading}
-                                className="w-full text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400"
+                                className="w-full text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center bg-[#ea670c] hover:bg-[#c2570c] disabled:bg-[#fb8a3c]"
                                 style={{ color: '#FFFFFF' }}
                             >
                                {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : 'লগইন করুন'}
@@ -171,7 +171,7 @@ const SigninPage = () => {
 
                         <p style={{ color: '#6B7280' }} className="text-center text-sm mt-6">
                             অ্যাকাউন্ট নেই?{' '}
-                            <a href="/signup" style={{ color: '#4F46E5' }} className="font-semibold hover:underline">
+                            <a href="/signup" style={{ color: '#fb8a3c' }} className="font-semibold hover:underline">
                                 সাইন আপ করুন
                             </a>
                         </p>

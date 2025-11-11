@@ -87,7 +87,7 @@ const ResetPasswordContent = () => {
                     </div>
                     {error && <p className="text-center text-sm text-red-600">{error}</p>}
                     {success && <p className="text-center text-sm text-green-600">{success}</p>}
-                    <button type="submit" disabled={loading} className="w-full text-white bg-indigo-600 hover:bg-indigo-700 font-semibold py-3 rounded-lg flex justify-center items-center disabled:bg-indigo-400">
+                    <button type="submit" disabled={loading} className="w-full text-white bg-[#ea670c] hover:bg-[#c2570c] font-semibold py-3 rounded-lg flex justify-center items-center disabled:bg-[#fb8a3c]">
                         {loading ? <Loader2 className="animate-spin" /> : 'পাসওয়ার্ড রিসেট করুন'}
                     </button>
                 </form>

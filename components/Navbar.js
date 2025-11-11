@@ -111,7 +111,7 @@ const Navbar = () => {
                 </Link>
                 <Link 
                     href="/signup" 
-                    className="px-5 py-3 text-sm text-center font-semibold text-white rounded-lg transition-colors w-full md:w-auto bg-[#f97316] hover:bg-emerald-700" 
+                    className="px-5 py-3 text-sm text-center font-semibold text-white rounded-lg transition-colors w-full md:w-auto bg-[#f97316] hover:bg-[#c2570c]" 
                     onClick={() => isMobile && setIsMenuOpen(false)}
                 >
                     একটি ফ্রি একাউন্ট খুলুন
